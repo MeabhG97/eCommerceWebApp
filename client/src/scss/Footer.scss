@@ -1,4 +1,6 @@
+@use "Variables";
+
 footer{
     grid-area: footer;
-    background-color: chartreuse;
+    background-color: Variables.$purple;
 }

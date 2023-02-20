@@ -1,4 +1,7 @@
+@use "Variables";
+
 header{
     grid-area: header;
-    background-color: crimson;
+    background-color: Variables.$purple;
+    color: Variables.$black;
 }

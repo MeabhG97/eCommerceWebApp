@@ -1,5 +1,8 @@
+@use "Variables";
+
 main{
     grid-area: main;
-    background-color: aqua;
+    background-color: Variables.$rose;
     display: flex;
+    color: Variables.$black;
 }

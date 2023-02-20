@@ -1,4 +1,6 @@
-#sidemenu{
+@use "Variables";
+
+#SideMenu{
     grid-area: sidemenu;
-    background-color: darkblue;
+    background-color: Variables.$green;
 }
