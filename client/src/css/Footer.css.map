@@ -1,1 +1,1 @@
-{"version":3,"sources":["../scss/Footer.scss","../scss/Variables.scss","Footer.css"],"names":[],"mappings":"AAEA;EACI,iBAAA;EACA,yBCHI;ACER","file":"Footer.css"}
+{"version":3,"sources":["../scss/Footer.scss","../scss/Constants.scss","Footer.css"],"names":[],"mappings":"AAEA;EACI,iBAAA;EACA,yBCHI;EDIJ,iBAAA;EACA,mBAAA;EACA,qBCLI;EDMJ,cCFI;ACCR","file":"Footer.css"}

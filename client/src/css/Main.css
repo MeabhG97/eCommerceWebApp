@@ -1,6 +1,12 @@
 main {
   grid-area: main;
-  background-color: #A599B5;
+  background-color: #FBF9FF;
   display: flex;
   color: #02111B;
+}
+
+@media screen and (max-width: 1279px) {
+  main.opened {
+    display: none;
+  }
 }/*# sourceMappingURL=Main.css.map */

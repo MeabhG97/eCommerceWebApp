@@ -1,5 +1,18 @@
 header {
   grid-area: header;
-  background-color: #A4036F;
-  color: #02111B;
+  background-color: #FBF9FF;
+  color: #A4036F;
+  border-bottom: solid;
+  border-width: 0.25em;
+  border-color: #A4036F;
+  display: flex;
+  flex-flow: row;
+}
+header h1 {
+  display: inline-block;
+}
+header img {
+  height: auto;
+  width: 100%;
+  max-width: 2em;
 }/*# sourceMappingURL=Header.css.map */

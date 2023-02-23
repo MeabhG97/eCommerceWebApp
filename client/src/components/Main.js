@@ -3,12 +3,9 @@ import React, {Component} from "react";
 import "../css/Main.css";
 
 export default class Main extends Component{
-    constructor(props){
-        super(props);
-    }
 
     render(){
-        return( <main>
+        return( <main className={this.props.menuOpen ? "opened" : "closed"}>
                     main
                     buttonCount: {this.props.buttonCount} 
                 </main>);

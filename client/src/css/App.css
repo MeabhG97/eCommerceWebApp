@@ -1,7 +1,22 @@
-#root {
+#App {
   display: grid;
-  grid-template-columns: 2fr 8fr;
-  grid-template-rows: 1fr 8.5fr 0.5fr;
-  grid-template-areas: "header     header" "sidemenu   main" "footer     footer";
-  background-color: blueviolet;
+  grid-template-columns: 80fr 20fr;
+  grid-template-rows: 10fr 85fr 5fr;
+}
+
+@media screen and (min-width: 1280px) {
+  #App.opened {
+    grid-template-areas: "header     header" "main   sidemenu" "footer     footer";
+  }
+  #App.closed {
+    grid-template-areas: "header     header" "main   main" "footer     footer";
+  }
+}
+@media screen and (max-width: 1279px) {
+  #App.opened {
+    grid-template-areas: "header     header" "sidemenu   sidemenu" "footer     footer";
+  }
+  #App.closed {
+    grid-template-areas: "header     header" "main   main" "footer     footer";
+  }
 }/*# sourceMappingURL=App.css.map */

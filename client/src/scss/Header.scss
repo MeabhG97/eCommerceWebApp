@@ -1,7 +1,24 @@
-@use "Variables";
+@use "Constants";
 
 header{
     grid-area: header;
-    background-color: Variables.$purple;
-    color: Variables.$black;
+    background-color: Constants.$white;
+    color: Constants.$purple;
+    border-bottom: solid;
+    border-width: 0.25em;
+    border-color: Constants.$purple;
+
+    display: flex;
+    flex-flow: row;
+    
+
+    h1{
+        display: inline-block;
+    }
+
+    img{
+        height: auto;
+        width: 100%;
+        max-width: 2em;
+    }
 }

@@ -1,4 +1,8 @@
-#SideMenu {
+#SideMenu.opened {
   grid-area: sidemenu;
-  background-color: #48A9A6;
+  background-color: #A599B5;
+}
+
+#SideMenu.closed {
+  display: none;
 }/*# sourceMappingURL=SideMenu.css.map */

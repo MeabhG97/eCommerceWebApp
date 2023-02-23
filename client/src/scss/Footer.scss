@@ -1,6 +1,10 @@
-@use "Variables";
+@use "Constants";
 
 footer{
     grid-area: footer;
-    background-color: Variables.$purple;
+    background-color: Constants.$green;
+    border-top: solid;
+    border-width: 0.2em;
+    border-color: Constants.$purple;
+    color: Constants.$white;
 }

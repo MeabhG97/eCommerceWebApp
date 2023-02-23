@@ -9,7 +9,14 @@ import "./css/App.css";
 export default class App extends Component {
     constructor(props){
         super(props);
-        this.state = {buttonCount: 0};
+        this.state = {
+            buttonCount: 0,
+            menuOpen: false
+        };
+    }
+
+    handleMenuOpen = () => {
+        this.setState({menuOpen: !this.state.menuOpen});
     }
 
     handleButton = () => {
@@ -18,12 +25,12 @@ export default class App extends Component {
 
     render(){
         return (
-            <>
-                <Header/>
-                <SideMenu handleButton={this.handleButton}/>
-                <Main buttonCount={this.state.buttonCount}/>
+            <div id="App" className={this.state.menuOpen ? "opened" : "closed"}>
+                <Header menuOpen={this.state.menuOpen} handleMenuOpen={this.handleMenuOpen}/>
+                <SideMenu menuOpen={this.state.menuOpen} handleButton={this.handleButton}/>
+                <Main menuOpen={this.state.menuOpen} buttonCount={this.state.buttonCount}/>
                 <Footer/>
-            </>
+            </div>
         );
     }
 }

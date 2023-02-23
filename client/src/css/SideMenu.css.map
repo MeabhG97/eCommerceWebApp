@@ -1,1 +1,1 @@
-{"version":3,"sources":["../scss/SideMenu.scss","../scss/Variables.scss","SideMenu.css"],"names":[],"mappings":"AAEA;EACI,mBAAA;EACA,yBCJI;ACGR","file":"SideMenu.css"}
+{"version":3,"sources":["../scss/SideMenu.scss","SideMenu.css"],"names":[],"mappings":"AAEA;EACI,mBAAA;EACA,yBAAA;ACDJ;;ADIA;EACI,aAAA;ACDJ","file":"SideMenu.css"}

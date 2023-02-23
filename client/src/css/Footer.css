@@ -1,4 +1,8 @@
 footer {
   grid-area: footer;
-  background-color: #A4036F;
+  background-color: #48A9A6;
+  border-top: solid;
+  border-width: 0.2em;
+  border-color: #A4036F;
+  color: #FBF9FF;
 }/*# sourceMappingURL=Footer.css.map */

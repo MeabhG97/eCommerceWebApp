@@ -1,8 +1,14 @@
-@use "Variables";
+@use "Constants";
 
 main{
     grid-area: main;
-    background-color: Variables.$rose;
+    background-color: Constants.$white;
     display: flex;
-    color: Variables.$black;
+    color: Constants.$black;
+}
+
+@media screen and (max-width: Constants.$laptopMin){
+    main.opened{
+        display: none;
+    }
 }

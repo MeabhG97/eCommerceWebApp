@@ -1,6 +1,10 @@
-@use "Variables";
+@use "Constants";
 
-#SideMenu{
+#SideMenu.opened{
     grid-area: sidemenu;
-    background-color: Variables.$green;
+    background-color: Constants.$rose;
+}
+
+#SideMenu.closed{
+    display: none;
 }
