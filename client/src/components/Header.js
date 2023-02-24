@@ -10,7 +10,7 @@ export default class Header extends Component{
         return( 
             <header>
                 <h1>Heading</h1>
-                <img src={this.props.menuOpen ? menuIcon : menuCloseIcon} alt="menu icon" 
+                <img src={this.props.menuOpen ? menuCloseIcon : menuIcon} alt="menu icon" 
                     onClick={this.props.handleMenuOpen}/>
             </header>   
         );
