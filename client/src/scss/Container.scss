@@ -1,19 +1,19 @@
 @use "Constants";
 
-#App{
+#Container{
     display: grid;
     grid-template-columns: 80fr 20fr;
     grid-template-rows: 10fr 85fr 5fr;  
 }
 
 @media screen and (min-width: Constants.$laptopMax){
-    #App.opened{
+    #Container.opened{
         grid-template-areas:    "header     header"
                                 "main   sidemenu"
                                 "footer     footer";
     }
 
-    #App.closed{
+    #Container.closed{
         grid-template-areas:    "header     header"
                                 "main   main"
                                 "footer     footer";  
@@ -21,13 +21,13 @@
 }
 
 @media screen and (max-width: Constants.$laptopMin){
-    #App.opened{
+    #Container.opened{
         grid-template-areas:    "header     header"
                                 "sidemenu   sidemenu"
                                 "footer     footer";
     }
 
-    #App.closed{
+    #Container.closed{
         grid-template-areas:    "header     header"
                                 "main   main"
                                 "footer     footer";  
