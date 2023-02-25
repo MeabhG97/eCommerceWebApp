@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 
-import Header from "./components/Header";
-import SideMenu from "./components/SideMenu";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import Header from "./Header";
+import SideMenu from "./SideMenu";
+import Main from "./Main";
+import Footer from "./Footer";
 
-import "./css/Container.css";
+import "../css/Container.css";
 export default class Container extends Component {
     constructor(props){
         super(props);

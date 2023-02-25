@@ -11,8 +11,43 @@ header {
 header h1 {
   display: inline-block;
 }
-header img {
+header svg {
   height: auto;
   width: 100%;
-  max-width: 2em;
+  max-width: 1.5em;
+}
+header svg path {
+  fill: #A4036F;
+}
+header button.white-purple {
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+header button.white-purple svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.5em;
+}
+header button.white-purple svg path {
+  fill: #A4036F;
+}
+header button.purple-white {
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+header button.purple-white svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.5em;
+}
+header button.purple-white svg path {
+  fill: #FBF9FF;
 }/*# sourceMappingURL=Header.css.map */

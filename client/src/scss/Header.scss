@@ -1,4 +1,5 @@
-@use "Constants";
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
 
 header{
     grid-area: header;
@@ -16,9 +17,20 @@ header{
         display: inline-block;
     }
 
-    img{
+    svg{
         height: auto;
         width: 100%;
-        max-width: 2em;
+        max-width: 1.5em;
+        path{
+            fill: Constants.$purple;
+        }
+    }
+
+    button.white-purple{
+        @include buttonWhitePurple;
+    }
+
+    button.purple-white{
+        @include buttonPurpleWhite;
     }
 }
