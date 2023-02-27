@@ -19,7 +19,8 @@ header svg {
 header svg path {
   fill: #A4036F;
 }
-header button.white-purple {
+header .whitePuprleButtonLink {
+  text-decoration: none;
   color: #A4036F;
   background-color: #FBF9FF;
   border: solid;
@@ -27,15 +28,16 @@ header button.white-purple {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header button.white-purple svg {
+header .whitePuprleButtonLink svg {
   height: auto;
   width: 100%;
   max-width: 1.5em;
 }
-header button.white-purple svg path {
+header .whitePuprleButtonLink svg path {
   fill: #A4036F;
 }
-header button.purple-white {
+header .purpleWhiteButtonLink {
+  text-decoration: none;
   color: #FBF9FF;
   background-color: #A4036F;
   border: solid;
@@ -43,11 +45,11 @@ header button.purple-white {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header button.purple-white svg {
+header .purpleWhiteButtonLink svg {
   height: auto;
   width: 100%;
   max-width: 1.5em;
 }
-header button.purple-white svg path {
+header .purpleWhiteButtonLink svg path {
   fill: #FBF9FF;
 }/*# sourceMappingURL=Header.css.map */

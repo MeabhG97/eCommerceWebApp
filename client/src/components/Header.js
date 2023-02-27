@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 
 import "../css/Header.css";
 import {ReactComponent as MenuIcon} from "../icons/menu-burger.svg";
@@ -12,17 +13,21 @@ export default class Header extends Component{
         return( 
             <header>
                 <h1>Heading</h1>
-                <button  type="button" className="white-purple">
-                    Login
-                    <LoginIcon/>
-                </button>
-                <button  type="button" className="purple-white">
-                    Register
-                    <RegisterIcon/>
-                </button> 
-
-                {this.props.menuOpen ? <MenuCloseIcon onClick={this.props.handleMenuOpen}/> : 
-                <MenuIcon onClick={this.props.handleMenuOpen}/>} 
+                {this.props.showLogin ?
+                    <>
+                        <Link to={"/Login"} className="whitePuprleButtonLink">
+                            Login
+                            <LoginIcon/>
+                        </Link>
+                        <Link to={"/Register"} className="purpleWhiteButtonLink">
+                            Register
+                            <RegisterIcon/>
+                        </Link>
+                    </>
+                : null}
+                {this.props.showMenuButton ? (this.props.menuOpen ? <MenuCloseIcon onClick={this.props.handleMenuOpen}/> : 
+                        <MenuIcon onClick={this.props.handleMenuOpen}/>)
+                : null} 
             </header>   
         );
     }

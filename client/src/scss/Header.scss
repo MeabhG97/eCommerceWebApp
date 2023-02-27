@@ -26,11 +26,11 @@ header{
         }
     }
 
-    button.white-purple{
-        @include buttonWhitePurple;
+    .whitePuprleButtonLink{
+        @include LinkButtonWhitePurple;
     }
 
-    button.purple-white{
-        @include buttonPurpleWhite;
+    .purpleWhiteButtonLink{
+        @include LinkButtonPurpleWhite;
     }
 }

@@ -1,4 +1,4 @@
-@use "Constants";
+@use "./Constants.scss";
 
 @mixin buttonWhitePurple{
     color: Constants.$purple;
@@ -17,7 +17,43 @@
     }
 }
 
+@mixin LinkButtonWhitePurple{
+    text-decoration: none;
+    color: Constants.$purple;
+    background-color: Constants.$white;
+    border: solid;
+    border-width: 0.1em;
+    border-radius: 1em;
+    border-color: Constants.$purple;
+    svg{
+        height: auto;
+        width: 100%;
+        max-width: 1.5em;
+        path{
+            fill: Constants.$purple;
+        }
+    }
+}
+
 @mixin buttonPurpleWhite{
+    color: Constants.$white;
+    background-color: Constants.$purple;
+    border: solid;
+    border-width: 0.1em;
+    border-radius: 1em;
+    border-color: Constants.$purple;
+    svg{
+        height: auto;
+        width: 100%;
+        max-width: 1.5em;
+        path{
+            fill: Constants.$white;
+        }
+    }
+}
+
+@mixin LinkButtonPurpleWhite{
+    text-decoration: none;
     color: Constants.$white;
     background-color: Constants.$purple;
     border: solid;

@@ -10,7 +10,6 @@ export default class Container extends Component {
     constructor(props){
         super(props);
         this.state = {
-            buttonCount: 0,
             menuOpen: false
         };
     }
@@ -19,14 +18,11 @@ export default class Container extends Component {
         this.setState({menuOpen: !this.state.menuOpen});
     }
 
-    handleButton = () => {
-        this.setState({buttonCount: this.state.buttonCount + 1});
-    }
-
     render(){
         return (
             <div id="Container" className={this.state.menuOpen ? "opened" : "closed"}>
-                <Header menuOpen={this.state.menuOpen} handleMenuOpen={this.handleMenuOpen}/>
+                <Header menuOpen={this.state.menuOpen} handleMenuOpen={this.handleMenuOpen}
+                    showLogin={true} showMenuButton={true}/>
                 <SideMenu menuOpen={this.state.menuOpen} handleButton={this.handleButton}/>
                 <Main menuOpen={this.state.menuOpen} buttonCount={this.state.buttonCount}/>
                 <Footer/>

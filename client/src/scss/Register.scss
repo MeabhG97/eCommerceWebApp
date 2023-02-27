@@ -1,0 +1,10 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+#register{
+    @include buttonPurpleWhite;
+}
+
+#cancel{
+    @include LinkButtonWhitePurple;
+}
