@@ -1,21 +1,58 @@
-#login {
+#LoginPage {
+  font-family: "Roboto Mono", monospace;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10fr 55fr 5fr;
+  grid-template-areas: "header" "main" "footer";
+}
+#LoginPage main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#LoginPage main h3 {
+  margin: 1em;
+  font-weight: 600;
+  font-size: 2em;
+}
+#LoginPage main form input {
+  display: block;
+  margin: 0.5em;
+  width: 15em;
+  padding: 0.5em;
+  border-color: #A599B5;
+  background-color: #FBF9FF;
+}
+#LoginPage main form input::-moz-placeholder {
+  color: #A4036F;
+}
+#LoginPage main form input::placeholder {
+  color: #A4036F;
+}
+#LoginPage main #buttons {
+  display: flex;
+}
+#LoginPage main #buttons #login {
   color: #FBF9FF;
   background-color: #A4036F;
   border: solid;
   border-width: 0.1em;
   border-radius: 1em;
   border-color: #A4036F;
+  height: 2em;
+  width: 5em;
+  font-size: larger;
+  margin: 0.5em;
 }
-#login svg {
+#LoginPage main #buttons #login svg {
   height: auto;
   width: 100%;
   max-width: 1.5em;
 }
-#login svg path {
+#LoginPage main #buttons #login svg path {
   fill: #FBF9FF;
 }
-
-#cancel {
+#LoginPage main #buttons #cancel {
   text-decoration: none;
   color: #A4036F;
   background-color: #FBF9FF;
@@ -23,12 +60,19 @@
   border-width: 0.1em;
   border-radius: 1em;
   border-color: #A4036F;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2em;
+  height: 2em;
+  width: 5em;
+  font-size: larger;
+  margin: 0.5em;
 }
-#cancel svg {
+#LoginPage main #buttons #cancel svg {
   height: auto;
   width: 100%;
   max-width: 1.5em;
 }
-#cancel svg path {
+#LoginPage main #buttons #cancel svg path {
   fill: #A4036F;
 }/*# sourceMappingURL=Login.css.map */

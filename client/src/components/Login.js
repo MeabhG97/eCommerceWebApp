@@ -21,27 +21,31 @@ export default class Login extends Component{
 
     render(){
         return(
-            <>
+            <div id="LoginPage">
                 <Header showLogin={false}/>
 
-                <h3>Login</h3>
-                
-                <form noValidate={true} id="login">
-                    <input name="email" type="text" placeholder="Email" autoComplete="email"
-                        value={this.state.email} onChange={this.handleInputChange}
-                    />
-                    <input name="password" type="password" placeholder="Password" autoComplete="password"
-                        value={this.state.password} onChange={this.handleInputChange}
-                    />
-                </form>
+                <main>
+                    <h3>Login</h3>
+                    
+                    <form noValidate={true} id="loginForm">
+                        <input name="email" type="text" placeholder="Email" autoComplete="email"
+                            value={this.state.email} onChange={this.handleInputChange}
+                        />
+                        <input name="password" type="password" placeholder="Password" autoComplete="password"
+                            value={this.state.password} onChange={this.handleInputChange}
+                        />
+                    </form>
 
-                <Link id={"cancel"} to={"/"}>Cancel</Link>
-                <button type="button" id="login">
-                    Login
-                </button>
+                    <div id="buttons">
+                        <Link id={"cancel"} to={"/"}>Cancel</Link>
+                        <button type="button" id="login">
+                            Login
+                        </button>
+                    </div>
+                </main>
 
                 <Footer/>
-            </>
+            </div>
         );
     }
 }

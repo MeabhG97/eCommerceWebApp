@@ -1,9 +1,12 @@
 @use "./Constants.scss";
+@use "./Mixins.scss" as *;
 
 #Container{
     display: grid;
     grid-template-columns: 80fr 20fr;
-    grid-template-rows: 10fr 85fr 5fr;  
+    grid-template-rows: 10fr 85fr 5fr;
+    
+    @include fonts;
 }
 
 @media screen and (min-width: Constants.$laptopMax){
