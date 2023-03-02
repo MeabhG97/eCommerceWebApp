@@ -39,20 +39,16 @@
   border-width: 0.1em;
   border-radius: 1em;
   border-color: #A4036F;
-  height: 2em;
+  height: 3em;
   width: 5em;
   font-size: larger;
   margin: 0.5em;
-}
-#RegisterPage main #buttons #register svg {
-  height: auto;
-  width: 100%;
-  max-width: 1.5em;
 }
 #RegisterPage main #buttons #register svg path {
   fill: #FBF9FF;
 }
 #RegisterPage main #buttons #cancel {
+  box-sizing: border-box;
   text-decoration: none;
   color: #A4036F;
   background-color: #FBF9FF;
@@ -62,16 +58,11 @@
   border-color: #A4036F;
   text-align: center;
   vertical-align: middle;
-  line-height: 2em;
-  height: 2em;
+  line-height: 3em;
+  height: 3em;
   width: 5em;
   font-size: larger;
   margin: 0.5em;
-}
-#RegisterPage main #buttons #cancel svg {
-  height: auto;
-  width: 100%;
-  max-width: 1.5em;
 }
 #RegisterPage main #buttons #cancel svg path {
   fill: #A4036F;

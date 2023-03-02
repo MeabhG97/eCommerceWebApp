@@ -12,9 +12,6 @@
     border-radius: 1em;
     border-color: Constants.$purple;
     svg{
-        height: auto;
-        width: 100%;
-        max-width: 1.5em;
         path{
             fill: Constants.$purple;
         }
@@ -22,6 +19,7 @@
 }
 
 @mixin LinkButtonWhitePurple{
+    box-sizing: border-box;
     text-decoration: none;
     color: Constants.$purple;
     background-color: Constants.$white;
@@ -30,9 +28,6 @@
     border-radius: 1em;
     border-color: Constants.$purple;
     svg{
-        height: auto;
-        width: 100%;
-        max-width: 1.5em;
         path{
             fill: Constants.$purple;
         }
@@ -47,9 +42,6 @@
     border-radius: 1em;
     border-color: Constants.$purple;
     svg{
-        height: auto;
-        width: 100%;
-        max-width: 1.5em;
         path{
             fill: Constants.$white;
         }
@@ -57,6 +49,7 @@
 }
 
 @mixin LinkButtonPurpleWhite{
+    box-sizing: border-box;
     text-decoration: none;
     color: Constants.$white;
     background-color: Constants.$purple;
@@ -65,9 +58,6 @@
     border-radius: 1em;
     border-color: Constants.$purple;
     svg{
-        height: auto;
-        width: 100%;
-        max-width: 1.5em;
         path{
             fill: Constants.$white;
         }

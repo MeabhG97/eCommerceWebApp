@@ -13,21 +13,26 @@ export default class Header extends Component{
         return( 
             <header>
                 <h1>Heading</h1>
-                {this.props.showLogin ?
-                    <>
-                        <Link to={"/Login"} className="whitePuprleButtonLink">
-                            Login
-                            <LoginIcon/>
-                        </Link>
-                        <Link to={"/Register"} className="purpleWhiteButtonLink">
-                            Register
-                            <RegisterIcon/>
-                        </Link>
-                    </>
-                : null}
-                {this.props.showMenuButton ? (this.props.menuOpen ? <MenuCloseIcon onClick={this.props.handleMenuOpen}/> : 
-                        <MenuIcon onClick={this.props.handleMenuOpen}/>)
-                : null} 
+
+                <div id="buttons">
+                    {this.props.showLogin ?
+                        <>
+                            <Link to={"/Login"} className="button" id="login">
+                                <span>Login</span>
+                                <LoginIcon/>
+                            </Link>
+                            <Link to={"/Register"} className="button" id="register">
+                                <span>Register</span>
+                                <RegisterIcon/>
+                            </Link>
+                        </>
+                    : null}
+                    {this.props.showMenuButton ? 
+                        (this.props.menuOpen ? 
+                            <MenuCloseIcon className={"menuIcon"} onClick={this.props.handleMenuOpen}/> : 
+                            <MenuIcon className={"menuIcon"} onClick={this.props.handleMenuOpen}/>)
+                    : null}
+                </div> 
             </header>   
         );
     }

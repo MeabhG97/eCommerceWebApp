@@ -9,28 +9,50 @@ header{
     border-width: 0.25em;
     border-color: Constants.$purple;
 
-    display: flex;
-    flex-flow: row;
-    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:    "title  buttons";
 
     h1{
         display: inline-block;
+        margin-left: 1em;
     }
 
-    svg{
+    #buttons{
+        display: flex;
+    }
+
+    .menuIcon{
         height: auto;
         width: 100%;
         max-width: 1.5em;
+        margin: 1.5em;
         path{
             fill: Constants.$purple;
         }
     }
 
-    .whitePuprleButtonLink{
+    .button{
+        margin: 0.5em;
+        height: 4em;
+        width: 8em;
+        display: flex;
+        justify-content: space-evenly;
+        justify-items: end;
+        align-items: center;
+        svg{
+            height: auto;
+            width: 100%;
+            max-width: 1.2em;
+        }
+    }
+
+    .button#login{
         @include LinkButtonWhitePurple;
     }
 
-    .purpleWhiteButtonLink{
+    .button#register{
         @include LinkButtonPurpleWhite;
     }
 }

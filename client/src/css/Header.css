@@ -5,21 +5,43 @@ header {
   border-bottom: solid;
   border-width: 0.25em;
   border-color: #A4036F;
-  display: flex;
-  flex-flow: row;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "title  buttons";
 }
 header h1 {
   display: inline-block;
+  margin-left: 1em;
 }
-header svg {
+header #buttons {
+  display: flex;
+}
+header .menuIcon {
   height: auto;
   width: 100%;
   max-width: 1.5em;
+  margin: 1.5em;
 }
-header svg path {
+header .menuIcon path {
   fill: #A4036F;
 }
-header .whitePuprleButtonLink {
+header .button {
+  margin: 0.5em;
+  height: 4em;
+  width: 8em;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+}
+header .button svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.2em;
+}
+header .button#login {
+  box-sizing: border-box;
   text-decoration: none;
   color: #A4036F;
   background-color: #FBF9FF;
@@ -28,15 +50,11 @@ header .whitePuprleButtonLink {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header .whitePuprleButtonLink svg {
-  height: auto;
-  width: 100%;
-  max-width: 1.5em;
-}
-header .whitePuprleButtonLink svg path {
+header .button#login svg path {
   fill: #A4036F;
 }
-header .purpleWhiteButtonLink {
+header .button#register {
+  box-sizing: border-box;
   text-decoration: none;
   color: #FBF9FF;
   background-color: #A4036F;
@@ -45,11 +63,6 @@ header .purpleWhiteButtonLink {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header .purpleWhiteButtonLink svg {
-  height: auto;
-  width: 100%;
-  max-width: 1.5em;
-}
-header .purpleWhiteButtonLink svg path {
+header .button#register svg path {
   fill: #FBF9FF;
 }/*# sourceMappingURL=Header.css.map */
