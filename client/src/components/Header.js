@@ -12,7 +12,9 @@ export default class Header extends Component{
     render(){
         return( 
             <header>
-                <h1>Heading</h1>
+                <Link to={"/"} id="headerLink">
+                    <h1>Heading</h1>
+                </Link>
 
                 <div id="buttons">
                     {this.props.showLogin ?

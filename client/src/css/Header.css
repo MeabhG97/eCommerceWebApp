@@ -10,9 +10,12 @@ header {
   grid-template-rows: 1fr;
   grid-template-areas: "title  buttons";
 }
-header h1 {
+header #headerLink h1 {
   display: inline-block;
   margin-left: 1em;
+}
+header #headerLink:visited h1 {
+  color: #A4036F;
 }
 header #buttons {
   display: flex;

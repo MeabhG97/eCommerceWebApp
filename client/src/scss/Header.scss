@@ -14,9 +14,17 @@ header{
     grid-template-rows: 1fr;
     grid-template-areas:    "title  buttons";
 
-    h1{
-        display: inline-block;
-        margin-left: 1em;
+    #headerLink{
+        h1{
+            display: inline-block;
+            margin-left: 1em;
+        }
+    }
+
+    #headerLink:visited{
+        h1{
+            color: Constants.$purple;
+        }
     }
 
     #buttons{

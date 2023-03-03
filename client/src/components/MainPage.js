@@ -5,8 +5,8 @@ import SideMenu from "./SideMenu";
 import Main from "./Main";
 import Footer from "./Footer";
 
-import "../css/Container.css";
-export default class Container extends Component {
+import "../css/MainPage.css";
+export default class MainPage extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -20,11 +20,11 @@ export default class Container extends Component {
 
     render(){
         return (
-            <div id="Container" className={this.state.menuOpen ? "opened" : "closed"}>
+            <div id="MainPage" className={this.state.menuOpen ? "opened" : "closed"}>
                 <Header menuOpen={this.state.menuOpen} handleMenuOpen={this.handleMenuOpen}
                     showLogin={true} showMenuButton={true}/>
-                <SideMenu menuOpen={this.state.menuOpen} handleButton={this.handleButton}/>
-                <Main menuOpen={this.state.menuOpen} buttonCount={this.state.buttonCount}/>
+                <SideMenu menuOpen={this.state.menuOpen}/>
+                <Main menuOpen={this.state.menuOpen}/>
                 <Footer/>
             </div>
         );
