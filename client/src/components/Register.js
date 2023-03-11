@@ -16,7 +16,8 @@ export default class Register extends Component{
             confirmPassword: "",
             isRegistered: false,
             isNameValid: true,
-            isEmailValid: true
+            isEmailValid: true,
+            doPasswordMatch: true
         };
     }
 
@@ -42,6 +43,15 @@ export default class Register extends Component{
             }
             else if(this.state.email.match(emailPattern) && !this.state.isEmailValid){
                 this.setState({isEmailValid: true});
+            }
+        }
+
+        if(this.state.confirmPassword !== prevState.confirmPassword){
+            if(this.state.confirmPassword !== this.state.password){
+                this.setState({doPasswordMatch: false});
+            }
+            else if(this.state.confirmPassword === this.state.password){
+                this.setState({doPasswordMatch: true});
             }
         }
     }
@@ -80,6 +90,11 @@ export default class Register extends Component{
                             autoComplete="confirmPassword" value={this.state.confirmPassword} 
                             onChange={this.handleInputChange}
                         />
+                        {!this.state.doPasswordMatch ?
+                            <div className="inputErrorMessage">
+                                Passwords do not match
+                            </div>
+                        : null}
                     </form>
 
                     <div id="buttons">
