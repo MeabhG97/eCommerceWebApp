@@ -24,7 +24,7 @@ export default class Register extends Component{
         this.setState({[e.target.name]: e.target.value});
     }
 
-    componentDidUpdate(prevState){
+    componentDidUpdate(prevProps, prevState){
         if(this.state.name !== prevState.name){
             let namePattern = /^[\w]{4,20}$/;
             if(!this.state.name.match(namePattern) && this.state.isNameValid){
@@ -59,8 +59,8 @@ export default class Register extends Component{
                         />
                         {!this.state.isNameValid ?
                             <div className="inputErrorMessage">
-                                User Name must only contain alphanumeric characters and _ <br/>
-                                User Name muct be between 4-20 characters long
+                                User Name must only contain alphanumeric characters and _ <br/> <br/>
+                                User Name must be between 4-20 characters long
                             </div>
                         : null}
 
