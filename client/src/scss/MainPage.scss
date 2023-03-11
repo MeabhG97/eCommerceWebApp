@@ -1,19 +1,22 @@
-@use "Constants";
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
 
-#Container{
+#MainPage{
     display: grid;
     grid-template-columns: 80fr 20fr;
-    grid-template-rows: 10fr 85fr 5fr;  
+    grid-template-rows: 10fr 85fr 5fr;
+    
+    @include fonts;
 }
 
 @media screen and (min-width: Constants.$laptopMax){
-    #Container.opened{
+    #MainPage.opened{
         grid-template-areas:    "header     header"
                                 "main   sidemenu"
                                 "footer     footer";
     }
 
-    #Container.closed{
+    #MainPage.closed{
         grid-template-areas:    "header     header"
                                 "main   main"
                                 "footer     footer";  
@@ -21,13 +24,13 @@
 }
 
 @media screen and (max-width: Constants.$laptopMin){
-    #Container.opened{
+    #MainPage.opened{
         grid-template-areas:    "header     header"
                                 "sidemenu   sidemenu"
                                 "footer     footer";
     }
 
-    #Container.closed{
+    #MainPage.closed{
         grid-template-areas:    "header     header"
                                 "main   main"
                                 "footer     footer";  

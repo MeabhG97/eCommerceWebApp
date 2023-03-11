@@ -1,13 +1,36 @@
 import React, {Component} from "react";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-import Container from "./components/Container";
+import MainPage from "./components/MainPage";
+import Login from "./components/Login";
+import PurchaseHistory from "./components/PurchaseHistory";
+import Register from "./components/Register";
+import UserProfile from "./components/UserProfile";
+import LoggedInRoute from "./components/LoggedInRoute";
+
+import { ACCESS_LEVEL_GUEST } from "./config/global-constansts";
+import Logout from "./components/Logout";
+
+if(typeof localStorage.userAccessLevel === "undefined"){
+    localStorage.userAccessLevel = ACCESS_LEVEL_GUEST;
+    localStorage.userName = "Guest";
+    localStorage.userID = -1;
+}
 
 export default class App extends Component {
 
-
     render(){
         return (
-            <Container/>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/Login" component={Login}/>
+                    <Route exact path="/Register" component={Register}/>
+                    <LoggedInRoute exact path="/UserProfile" component={UserProfile}/>
+                    <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
+                    <LoggedInRoute exact path="/Logout" component={Logout}/>
+                    <Route path="*" component={MainPage}/>
+                </Switch>
+            </BrowserRouter>
         );
     }
 }

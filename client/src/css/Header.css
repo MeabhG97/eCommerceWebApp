@@ -5,21 +5,55 @@ header {
   border-bottom: solid;
   border-width: 0.25em;
   border-color: #A4036F;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "title  buttons";
+}
+header #title {
+  grid-area: title;
   display: flex;
-  flex-flow: row;
+  align-items: center;
 }
-header h1 {
+header #title #headerLink h1 {
   display: inline-block;
+  margin-left: 1em;
+  text-decoration: none;
 }
-header svg {
+header #headerLink:visited h1 {
+  color: #A4036F;
+}
+header #buttons {
+  grid-area: buttons;
+  display: flex;
+  align-items: center;
+}
+header #buttons .menuIcon {
   height: auto;
   width: 100%;
   max-width: 1.5em;
+  margin: 1.5em;
 }
-header svg path {
+header #buttons .menuIcon path {
   fill: #A4036F;
 }
-header button.white-purple {
+header #buttons .button {
+  margin: 0.5em;
+  height: 4em;
+  width: 8em;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+}
+header #buttons .button svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.2em;
+}
+header #buttons .button#login {
+  box-sizing: border-box;
+  text-decoration: none;
   color: #A4036F;
   background-color: #FBF9FF;
   border: solid;
@@ -27,15 +61,12 @@ header button.white-purple {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header button.white-purple svg {
-  height: auto;
-  width: 100%;
-  max-width: 1.5em;
-}
-header button.white-purple svg path {
+header #buttons .button#login svg path {
   fill: #A4036F;
 }
-header button.purple-white {
+header #buttons .button#register {
+  box-sizing: border-box;
+  text-decoration: none;
   color: #FBF9FF;
   background-color: #A4036F;
   border: solid;
@@ -43,11 +74,32 @@ header button.purple-white {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header button.purple-white svg {
-  height: auto;
-  width: 100%;
-  max-width: 1.5em;
+header #buttons .button#register svg path {
+  fill: #FBF9FF;
 }
-header button.purple-white svg path {
+header #buttons .button#user {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+header #buttons .button#user svg path {
+  fill: #A4036F;
+}
+header #buttons .button#logout {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+header #buttons .button#logout svg path {
   fill: #FBF9FF;
 }/*# sourceMappingURL=Header.css.map */

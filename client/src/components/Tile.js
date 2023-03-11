@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class ShopTile extends Component{
+export default class Tile extends Component{
     render(){
         return(
             <div/>

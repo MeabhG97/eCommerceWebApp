@@ -1,0 +1,63 @@
+#UserProfile {
+  font-family: "Roboto Mono", monospace;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10fr 55fr 5fr;
+  grid-template-areas: "header" "main" "footer";
+}
+#UserProfile main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  background-color: #FBF9FF;
+}
+#UserProfile main div.userInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0.5em;
+}
+#UserProfile main div.userInfo span.heading {
+  font-weight: 700;
+}
+#UserProfile main div.userInfo span.info {
+  font-weight: 400;
+}
+#UserProfile main .button {
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+  margin: 0.5em;
+}
+#UserProfile main #PurchaseHistory {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  width: 15em;
+  height: 3em;
+}
+#UserProfile main #PurchaseHistory svg path {
+  fill: #A4036F;
+}
+#UserProfile main #back {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  width: 6em;
+  height: 3em;
+}
+#UserProfile main #back svg path {
+  fill: #FBF9FF;
+}/*# sourceMappingURL=UserProfile.css.map */

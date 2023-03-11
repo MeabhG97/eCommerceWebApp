@@ -5,9 +5,10 @@ import "../css/Main.css";
 export default class Main extends Component{
 
     render(){
-        return( <main className={this.props.menuOpen ? "opened" : "closed"}>
-                    main
-                    buttonCount: {this.props.buttonCount} 
-                </main>);
+        return( 
+            <main className={this.props.menuOpen ? "opened" : "closed"}>
+                    
+            </main>
+        );
     }
 }

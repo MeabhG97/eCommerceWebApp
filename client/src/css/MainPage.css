@@ -1,22 +1,23 @@
-#Container {
+#MainPage {
   display: grid;
   grid-template-columns: 80fr 20fr;
   grid-template-rows: 10fr 85fr 5fr;
+  font-family: "Roboto Mono", monospace;
 }
 
 @media screen and (min-width: 1280px) {
-  #Container.opened {
+  #MainPage.opened {
     grid-template-areas: "header     header" "main   sidemenu" "footer     footer";
   }
-  #Container.closed {
+  #MainPage.closed {
     grid-template-areas: "header     header" "main   main" "footer     footer";
   }
 }
 @media screen and (max-width: 1279px) {
-  #Container.opened {
+  #MainPage.opened {
     grid-template-areas: "header     header" "sidemenu   sidemenu" "footer     footer";
   }
-  #Container.closed {
+  #MainPage.closed {
     grid-template-areas: "header     header" "main   main" "footer     footer";
   }
-}/*# sourceMappingURL=Container.css.map */
+}/*# sourceMappingURL=MainPage.css.map */

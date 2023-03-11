@@ -1,0 +1,1 @@
+{"version":3,"sources":["../scss/MainPage.scss","../scss/Mixins.scss","MainPage.css"],"names":[],"mappings":"AAGA;EACI,aAAA;EACA,gCAAA;EACA,iCAAA;ECHA,qCAAA;ACEJ;;AFMA;EACI;IACI,8EAAA;EEHN;EFQE;IACI,0EAAA;EENN;AACF;AFWA;EACI;IACI,kFAAA;EETN;EFcE;IACI,0EAAA;EEZN;AACF","file":"MainPage.css"}
