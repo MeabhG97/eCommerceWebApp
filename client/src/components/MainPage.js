@@ -2,7 +2,6 @@ import React, {Component} from "react";
 
 import Header from "./Header";
 import SideMenu from "./SideMenu";
-import Main from "./Main";
 import Footer from "./Footer";
 
 import "../css/MainPage.css";
