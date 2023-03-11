@@ -7,6 +7,12 @@
     grid-template-rows: 10fr 85fr 5fr;
     
     @include fonts;
+
+    main{
+        grid-area: main;
+        background-color: Constants.$white;
+        display: flex;
+    }
 }
 
 @media screen and (min-width: Constants.$laptopMax){
