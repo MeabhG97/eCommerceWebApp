@@ -14,10 +14,17 @@ header{
     grid-template-rows: 1fr;
     grid-template-areas:    "title  buttons";
 
-    #headerLink{
-        h1{
-            display: inline-block;
-            margin-left: 1em;
+    #title{
+        grid-area: title;
+        display: flex;
+        align-items: center;
+
+        #headerLink{
+            h1{
+                display: inline-block;
+                margin-left: 1em;
+                text-decoration: none;
+            }
         }
     }
 
@@ -28,48 +35,49 @@ header{
     }
 
     #buttons{
+        grid-area: buttons;
         display: flex;
         align-items: center;
-    }
 
-    .menuIcon{
-        height: auto;
-        width: 100%;
-        max-width: 1.5em;
-        margin: 1.5em;
-        path{
-            fill: Constants.$purple;
-        }
-    }
-
-    .button{
-        margin: 0.5em;
-        height: 4em;
-        width: 8em;
-        display: flex;
-        justify-content: space-evenly;
-        justify-items: end;
-        align-items: center;
-        svg{
+        .menuIcon{
             height: auto;
             width: 100%;
-            max-width: 1.2em;
+            max-width: 1.5em;
+            margin: 1.5em;
+            path{
+                fill: Constants.$purple;
+            }
         }
-    }
-
-    .button#login{
-        @include LinkButtonWhitePurple;
-    }
-
-    .button#register{
-        @include LinkButtonPurpleWhite;
-    }
-
-    .button#user{
-        @include LinkButtonWhitePurple;
-    }
-
-    .button#logout{
-        @include LinkButtonPurpleWhite;
+    
+        .button{
+            margin: 0.5em;
+            height: 4em;
+            width: 8em;
+            display: flex;
+            justify-content: space-evenly;
+            justify-items: end;
+            align-items: center;
+            svg{
+                height: auto;
+                width: 100%;
+                max-width: 1.2em;
+            }
+        }
+    
+        .button#login{
+            @include LinkButtonWhitePurple;
+        }
+    
+        .button#register{
+            @include LinkButtonPurpleWhite;
+        }
+    
+        .button#user{
+            @include LinkButtonWhitePurple;
+        }
+    
+        .button#logout{
+            @include LinkButtonPurpleWhite;
+        }
     }
 }

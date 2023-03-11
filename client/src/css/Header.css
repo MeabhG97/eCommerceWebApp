@@ -10,27 +10,34 @@ header {
   grid-template-rows: 1fr;
   grid-template-areas: "title  buttons";
 }
-header #headerLink h1 {
+header #title {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+}
+header #title #headerLink h1 {
   display: inline-block;
   margin-left: 1em;
+  text-decoration: none;
 }
 header #headerLink:visited h1 {
   color: #A4036F;
 }
 header #buttons {
+  grid-area: buttons;
   display: flex;
   align-items: center;
 }
-header .menuIcon {
+header #buttons .menuIcon {
   height: auto;
   width: 100%;
   max-width: 1.5em;
   margin: 1.5em;
 }
-header .menuIcon path {
+header #buttons .menuIcon path {
   fill: #A4036F;
 }
-header .button {
+header #buttons .button {
   margin: 0.5em;
   height: 4em;
   width: 8em;
@@ -39,12 +46,12 @@ header .button {
   justify-items: end;
   align-items: center;
 }
-header .button svg {
+header #buttons .button svg {
   height: auto;
   width: 100%;
   max-width: 1.2em;
 }
-header .button#login {
+header #buttons .button#login {
   box-sizing: border-box;
   text-decoration: none;
   color: #A4036F;
@@ -54,10 +61,10 @@ header .button#login {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header .button#login svg path {
+header #buttons .button#login svg path {
   fill: #A4036F;
 }
-header .button#register {
+header #buttons .button#register {
   box-sizing: border-box;
   text-decoration: none;
   color: #FBF9FF;
@@ -67,10 +74,10 @@ header .button#register {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header .button#register svg path {
+header #buttons .button#register svg path {
   fill: #FBF9FF;
 }
-header .button#user {
+header #buttons .button#user {
   box-sizing: border-box;
   text-decoration: none;
   color: #A4036F;
@@ -80,10 +87,10 @@ header .button#user {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header .button#user svg path {
+header #buttons .button#user svg path {
   fill: #A4036F;
 }
-header .button#logout {
+header #buttons .button#logout {
   box-sizing: border-box;
   text-decoration: none;
   color: #FBF9FF;
@@ -93,6 +100,6 @@ header .button#logout {
   border-radius: 1em;
   border-color: #A4036F;
 }
-header .button#logout svg path {
+header #buttons .button#logout svg path {
   fill: #FBF9FF;
 }/*# sourceMappingURL=Header.css.map */

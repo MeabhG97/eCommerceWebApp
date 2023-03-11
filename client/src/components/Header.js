@@ -18,13 +18,15 @@ export default class Header extends Component{
     render(){
         return( 
             <header>
-                <Link to={"/"} id="headerLink">
-                    <h1>Heading</h1>
-                </Link>
-
+                <div id="title">
+                    <Link to={"/"} id="headerLink">
+                        <h1>Heading</h1>
+                    </Link>
+                </div>
                 <div id="buttons">
                     
-                    {//SHow Login and Register to Guests
+                    {//Show Login and Register to Guests
+                        this.props.showLogin &&
                         localStorage.userAccessLevel <= ACCESS_LEVEL_GUEST ?
                             <>
                                 <Link to={"/Login"} className="button" id="login">
