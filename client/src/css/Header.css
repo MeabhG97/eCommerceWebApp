@@ -19,6 +19,7 @@ header #headerLink:visited h1 {
 }
 header #buttons {
   display: flex;
+  align-items: center;
 }
 header .menuIcon {
   height: auto;

@@ -7,4 +7,25 @@ footer{
     border-width: 0.2em;
     border-color: Constants.$purple;
     color: Constants.$white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span{
+        padding: 0.5em;
+    }
+
+    a{
+        padding: 0.5em;
+        svg{
+            height: auto;
+            width: 100%;
+            max-width: 2em;
+            path{
+                fill: Constants.$white;
+            }
+        }
+    }
+    
 }

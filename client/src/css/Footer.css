@@ -5,4 +5,21 @@ footer {
   border-width: 0.2em;
   border-color: #A4036F;
   color: #FBF9FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer span {
+  padding: 0.5em;
+}
+footer a {
+  padding: 0.5em;
+}
+footer a svg {
+  height: auto;
+  width: 100%;
+  max-width: 2em;
+}
+footer a svg path {
+  fill: #FBF9FF;
 }/*# sourceMappingURL=Footer.css.map */
