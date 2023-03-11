@@ -64,4 +64,12 @@ header{
     .button#register{
         @include LinkButtonPurpleWhite;
     }
+
+    .button#user{
+        @include LinkButtonWhitePurple;
+    }
+
+    .button#logout{
+        @include LinkButtonPurpleWhite;
+    }
 }

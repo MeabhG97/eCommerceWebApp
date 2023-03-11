@@ -69,4 +69,30 @@ header .button#register {
 }
 header .button#register svg path {
   fill: #FBF9FF;
+}
+header .button#user {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+header .button#user svg path {
+  fill: #A4036F;
+}
+header .button#logout {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+header .button#logout svg path {
+  fill: #FBF9FF;
 }/*# sourceMappingURL=Header.css.map */
