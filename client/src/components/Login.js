@@ -11,12 +11,25 @@ export default class Login extends Component{
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            isEmailValid: true
         };
     }
 
     handleInputChange = (e) => {
         this.setState({[e.target.name]: e.target.value});
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        if(this.state.email !== prevState.email){
+            let emailPattern = /(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}/;
+            if(!this.state.email.match(emailPattern) && this.state.isEmailValid){
+                this.setState({isEmailValid: false});
+            }
+            else if(this.state.email.match(emailPattern) && !this.state.isEmailValid){
+                this.setState({isEmailValid: true});
+            }
+        }
     }
 
     render(){
@@ -31,6 +44,12 @@ export default class Login extends Component{
                         <input name="email" type="text" placeholder="Email" autoComplete="email"
                             value={this.state.email} onChange={this.handleInputChange}
                         />
+                        {!this.state.isEmailValid ?
+                            <div className="inputErrorMessage">
+                                Invalid email
+                            </div>
+                        : null}
+
                         <input name="password" type="password" placeholder="Password" autoComplete="password"
                             value={this.state.password} onChange={this.handleInputChange}
                         />

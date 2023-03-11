@@ -31,7 +31,15 @@
             }
             input::placeholder{
                 color: Constants.$purple;
-            }   
+            }
+            
+            .inputErrorMessage{
+                width: 15em;
+                padding: 0.625em;
+                margin: 0.5em;
+                font-size: 0.75em;
+                color: Constants.$purple;
+            } 
         }
         #buttons{
             display: flex;
