@@ -5,6 +5,7 @@ import SideMenu from "./SideMenu";
 import Footer from "./Footer";
 
 import "../css/MainPage.css";
+import DisplayAllProducts from "./DisplayAllProducts";
 export default class MainPage extends Component {
     constructor(props){
         super(props);
@@ -24,8 +25,9 @@ export default class MainPage extends Component {
                     showLogin={true} showMenuButton={true}/>
                 <SideMenu menuOpen={this.state.menuOpen}/>
                 <main className={this.state.menuOpen ? "opened" : "closed"}>
-                    
+                <DisplayAllProducts/>
                 </main>
+                
                 <Footer/>
             </div>
         );
