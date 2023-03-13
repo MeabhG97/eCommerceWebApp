@@ -10,9 +10,9 @@ import {ReactComponent as RegisterIcon} from "../icons/register.svg";
 import {ReactComponent as UserIcon} from "../icons/user.svg";
 import {ReactComponent as LogoutIcon} from "../icons/logout.svg";
 
-import { ACCESS_LEVEL_GUEST } from "../config/global-constansts";
-import { ACCESS_LEVEL_USER } from "../config/global-constansts";
-import { ACCESS_LEVEL_ADMIN } from "../config/global-constansts";
+import { ACCESS_LEVEL_GUEST } from "../config/global-constants";
+import { ACCESS_LEVEL_USER } from "../config/global-constants";
+import { ACCESS_LEVEL_ADMIN } from "../config/global-constants";
 export default class Header extends Component{
 
     render(){
