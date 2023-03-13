@@ -24,8 +24,9 @@ export default class MainPage extends Component {
                 <Header menuOpen={this.state.menuOpen} handleMenuOpen={this.handleMenuOpen}
                     showLogin={true} showMenuButton={true}/>
                 <SideMenu menuOpen={this.state.menuOpen}/>
+                
                 <main className={this.state.menuOpen ? "opened" : "closed"}>
-                <DisplayAllProducts/>
+                    <DisplayAllProducts/>
                 </main>
                 
                 <Footer/>
