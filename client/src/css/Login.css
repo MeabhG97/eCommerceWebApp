@@ -29,6 +29,13 @@
 #LoginPage main form input::placeholder {
   color: #A4036F;
 }
+#LoginPage main form .inputErrorMessage {
+  width: 15em;
+  padding: 0.625em;
+  margin: 0.5em;
+  font-size: 0.75em;
+  color: #A4036F;
+}
 #LoginPage main #buttons {
   display: flex;
 }

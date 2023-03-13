@@ -4,6 +4,11 @@
   grid-template-rows: 10fr 85fr 5fr;
   font-family: "Roboto Mono", monospace;
 }
+#MainPage main {
+  grid-area: main;
+  background-color: #FBF9FF;
+  display: flex;
+}
 
 @media screen and (min-width: 1280px) {
   #MainPage.opened {
