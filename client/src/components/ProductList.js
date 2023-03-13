@@ -6,7 +6,7 @@ import "../css/ProductList.css";
 export default class ProductList extends Component{
     render(){
         return(
-            <div class="productList">
+            <div className="productList">
                 {this.props.products.map((product) => <ProductCard key={product._id} product={product}/>)}
             </div>
         )
