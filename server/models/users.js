@@ -4,7 +4,7 @@ const productSchema = require("./products");
 let purchasesSchema = new mongoose.Schema(
     {
         date: {type: Date, default: Date.now},
-        products: [{type: Schema.Types.ObjectId, ref: "products"}]
+        products: [{type: mongoose.Schema.Types.ObjectId, ref: "products"}]
     }
 );
 

@@ -11,6 +11,8 @@ import LoggedInRoute from "./components/LoggedInRoute";
 import { ACCESS_LEVEL_GUEST } from "./config/global-constants";
 import Logout from "./components/Logout";
 
+const createError = require("http-errors");
+
 if(typeof localStorage.userAccessLevel === "undefined"){
     localStorage.userAccessLevel = ACCESS_LEVEL_GUEST;
     localStorage.userName = "Guest";

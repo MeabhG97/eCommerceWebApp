@@ -1,9 +1,12 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 import Footer from "./Footer";
 import Header from "./Header";
 
 import "../css/Register.css";
+import { SERVER_HOST } from "../config/global-constants";
 
 export default class Register extends Component{
     constructor(props){
@@ -56,6 +59,25 @@ export default class Register extends Component{
         }
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        if(this.state.isNameValid && this.state.isEmailValid && this.state.doPasswordMatch){
+            console.log(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`);
+            axios.post(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`)
+                .then(res => {
+                    if(res.data){
+                        if(res.data.errorMessage){
+                            console.log(res.data.errorMessage);
+                        }
+                        else{
+                            console.log(res.data.message);
+                        }
+                    }
+                });
+        }
+    }
+
     render(){
         return(
             <div id="RegisterPage">
@@ -99,7 +121,7 @@ export default class Register extends Component{
 
                     <div id="buttons">
                         <Link id={"cancel"} to={"/"}>Cancel</Link>
-                        <button type="button" id="register">
+                        <button type="button" id="register" onClick={this.handleSubmit}>
                             Register
                         </button>
                     </div>
