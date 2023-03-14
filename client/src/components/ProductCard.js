@@ -6,15 +6,15 @@ export default class ProductCard extends Component{
     render(){
         return(
             <div className="productCard">
-                <div className="product-head"><h1>{this.props.product.productName}</h1></div>
-                <div className="product-body">
-                    <img style={{width: "100%"}} src="https://preview.redd.it/80g7ddrm83n31.jpg?auto=webp&s=5e7190a2e6ff4fdd1861e8a1208a47277593fc70" alt=""/>
+                <div className="product-title">
+                    <h3>{this.props.product.productName}</h3>
                 </div>
-                <div className="product-footer">
-                    <p>{this.props.product.description}</p>
-                    <p>{this.props.product.category}</p>
-                    <p>{this.props.product.productPrice}</p>
-                    <p>{this.props.product.stock}</p>
+                <img style={{width: "100%"}} src="https://preview.redd.it/80g7ddrm83n31.jpg?auto=webp&s=5e7190a2e6ff4fdd1861e8a1208a47277593fc70" alt=""/>
+                <div className="product-info">
+                    <span className="product-desc">{this.props.product.description}</span>
+                    <span className="product-category">{this.props.product.category}</span>
+                    <span className="product-price">€{this.props.product.productPrice}</span>
+                    <span className="product-stock">Stock: {this.props.product.stock}</span>
                 </div>
             </div>
         )
