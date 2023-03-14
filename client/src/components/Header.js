@@ -75,6 +75,7 @@ export default class Header extends Component{
                         }
 
                         {//Show User Profile to Users
+                            this.props.showLogin &&
                             localStorage.userAccessLevel == ACCESS_LEVEL_USER ?
                                 <>
                                     <Link to={"/UserProfile"} className="button" id="user">

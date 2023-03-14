@@ -17,6 +17,7 @@
   justify-content: space-between;
   width: 50%;
   margin: 0.5em;
+  border-bottom: #A599B5 solid;
 }
 #UserProfile main div.userInfo span.heading {
   font-weight: 700;
