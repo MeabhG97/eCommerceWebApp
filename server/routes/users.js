@@ -19,15 +19,15 @@ router.post("/users/register/:name/:email/:password", (req, res) => {
                 parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (error, hash) => {
                 userModel.create({userName: req.params.name,
                     email: req.params.email,
-                    passwordHash: hash}), (error, data) => {
+                    passwordHash: hash}, (error, data) => {
                         if(data){
-                            res.json({message: "201: user registered"});
-                            console.log("register");
+                            res.json({message: "201: user registered", name: data.userName, userID: data._id,
+                                email: data.email, accessLevel: data.accessLevel});
                         }
                         else{
                             res.json({errorMessage: "user not registered"});
                         }
-                    }
+                    });
             });
         }
     });

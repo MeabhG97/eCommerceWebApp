@@ -66,12 +66,15 @@ export default class Register extends Component{
             console.log(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`);
             axios.post(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`)
                 .then(res => {
+                    console.log(res);
                     if(res.data){
                         if(res.data.errorMessage){
                             console.log(res.data.errorMessage);
                         }
                         else{
-                            console.log(res.data.message);
+                            localStorage.userName = res.data.name;
+                            localStorage.userID = res.data.userID;
+                            localStorage.userAccessLevel = res.data.accessLevel;
                         }
                     }
                 });
