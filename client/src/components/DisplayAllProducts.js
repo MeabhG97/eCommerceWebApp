@@ -39,6 +39,7 @@ export default class DisplayAllProducts extends Component{
         return(
             <div className="list-container">
                 <ProductList products={this.state.products}/>
+
             </div>
         )
     }

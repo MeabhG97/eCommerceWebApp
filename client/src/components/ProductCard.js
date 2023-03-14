@@ -7,7 +7,7 @@ export default class ProductCard extends Component{
         return(
             <div className="productCard">
                 <div className="product-head"><h1>{this.props.product.productName}</h1></div>
-                <div className="product-body"><img style={{width: "100%"}} src="https://preview.redd.it/80g7ddrm83n31.jpg?auto=webp&s=5e7190a2e6ff4fdd1861e8a1208a47277593fc70"></img></div>
+                <div className="product-body"><img style={{width: "100%"}} src="https://static.nike.com/a/images/t_default/e839f55c-84d5-4030-9bcf-644e6a6463ea/revolution-6-running-shoes-FgfhgR.png"></img></div>
                 <div className="product-footer">
                     <p>{this.props.product.description}</p>
                     <p>{this.props.product.category}</p>

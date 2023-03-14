@@ -10,6 +10,7 @@ import LoggedInRoute from "./components/LoggedInRoute";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global-constants";
 import Logout from "./components/Logout";
+import AddProduct from "./components/AddProduct";
 
 if(typeof localStorage.userAccessLevel === "undefined"){
     localStorage.userAccessLevel = ACCESS_LEVEL_GUEST;
@@ -25,7 +26,7 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path="/Login" component={Login}/>
                     <Route exact path="/Register" component={Register}/>
-                
+                    <Route exact path="/AddProduct" component={AddProduct}/>
                     <LoggedInRoute exact path="/UserProfile" component={UserProfile}/>
                     <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
                     <LoggedInRoute exact path="/Logout" component={Logout}/>
