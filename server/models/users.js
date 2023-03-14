@@ -3,8 +3,8 @@ const productSchema = require("./products");
 
 let purchasesSchema = new mongoose.Schema(
     {
-        date: {type: Date, required: true, default: Date.now},
-        products: [productSchema._id]
+        date: {type: Date, default: Date.now},
+        products: [{type: Schema.Types.ObjectId, ref: "products"}]
     }
 );
 
@@ -14,7 +14,8 @@ let userSchema = new mongoose.Schema(
         email: {type: String, required: true},
         passwordHash: {type: String, required: true},
         profileImage: {type: String, default: ""},
-        purchases: [purchasesSchema]
+        purchases: [purchasesSchema],
+        accessLevel: {type: Number, default: parseInt(process.env.ACCESS_LEVEL_USER)}
     },
     {
         collection: "user"
