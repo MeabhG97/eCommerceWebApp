@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 import { ACCESS_LEVEL_GUEST } from "../config/global-constants";
