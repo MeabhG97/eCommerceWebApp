@@ -94,7 +94,7 @@ export default class AddProduct extends Component {
                             <Form.Control type="text" name="stock" value={this.state.stock} onChange={this.handleChange} />
                         </Form.Group>
         
-                        <LinkInClass value="Add" className="green-button"  onClick={this.handleSubmit}/>            
+                            <LinkInClass value="Add" className="blue-button"  onClick={this.handleSubmit}/>            
                               <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>
                     </Form>
             </div>

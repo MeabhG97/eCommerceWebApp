@@ -5,3 +5,20 @@
     grid-gap: 1rem;
     
 }
+
+.blue-button {
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #3498db;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .blue-button:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+  }
