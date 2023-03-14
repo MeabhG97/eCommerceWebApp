@@ -1,7 +1,7 @@
 #MainPage {
   display: grid;
   grid-template-columns: 80fr 20fr;
-  grid-template-rows: 10fr 85fr 5fr;
+  grid-template-rows: 20vh 1fr 10vh;
   font-family: "Roboto Mono", monospace;
 }
 #MainPage main {
