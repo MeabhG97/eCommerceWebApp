@@ -33,6 +33,24 @@ router.post("/users/register/:name/:email/:password", (req, res) => {
     });
 });
 
+router.post("/users/login/:email/:password", (req, res) => {
+    userModel.findOne({email: req.params.email}, (error, data) => {
+        if(data){
+            bcrypt.compare(req.params.password, data.passwordHash, (error, result) => {
+                if(result){
+                    res.json({name: data.userName, userID: data._id ,accessLevel: data.accessLevel});
+                }
+                else{
+                    res.json({errorMessage: "Incorrect Password"});
+                }
+            })
+        }
+        else{
+            res.json({errorMessage: "User not found"});
+        }
+    });
+});
+
 router.post("/users/logout", (req, res) => {
     res.json({});
 });

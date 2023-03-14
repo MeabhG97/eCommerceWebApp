@@ -43,6 +43,7 @@ export default class Register extends Component{
         }
 
         if(this.state.email !== prevState.email){
+            // eslint-disable-next-line
             let emailPattern = /(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}/;
             if(!this.state.email.match(emailPattern) && this.state.isEmailValid){
                 this.setState({isEmailValid: false});
@@ -68,7 +69,6 @@ export default class Register extends Component{
         if(this.state.isNameValid && this.state.isEmailValid && this.state.doPasswordMatch){
             axios.post(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`)
                 .then(res => {
-                    console.log(res);
                     if(res.data){
                         if(res.data.errorMessage){
                             console.log(res.data.errorMessage);
