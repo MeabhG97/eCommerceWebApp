@@ -33,4 +33,8 @@ router.post("/users/register/:name/:email/:password", (req, res) => {
     });
 });
 
+router.post("/users/logout", (req, res) => {
+    res.json({});
+});
+
 module.exports = router;

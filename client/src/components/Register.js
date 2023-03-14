@@ -1,13 +1,15 @@
 import React, {Component} from "react";
-import { Link, redirect } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import axios from "axios";
+import { Redirect } from "react-router";
 
 import Footer from "./Footer";
 import Header from "./Header";
 
 import "../css/Register.css";
+
 import { SERVER_HOST } from "../config/global-constants";
-import { Redirect } from "react-router";
+
 
 export default class Register extends Component{
     constructor(props){
@@ -64,7 +66,6 @@ export default class Register extends Component{
         e.preventDefault();
 
         if(this.state.isNameValid && this.state.isEmailValid && this.state.doPasswordMatch){
-            console.log(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`);
             axios.post(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`)
                 .then(res => {
                     console.log(res);
