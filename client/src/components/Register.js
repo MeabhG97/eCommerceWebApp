@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import axios from "axios";
 
 import Footer from "./Footer";
@@ -7,6 +7,7 @@ import Header from "./Header";
 
 import "../css/Register.css";
 import { SERVER_HOST } from "../config/global-constants";
+import { Redirect } from "react-router";
 
 export default class Register extends Component{
     constructor(props){
@@ -75,6 +76,7 @@ export default class Register extends Component{
                             localStorage.userName = res.data.name;
                             localStorage.userID = res.data.userID;
                             localStorage.userAccessLevel = res.data.accessLevel;
+                            this.setState({isRegistered: true});
                         }
                     }
                 });
@@ -83,55 +85,60 @@ export default class Register extends Component{
 
     render(){
         return(
-            <div id="RegisterPage">
-                <Header showLogin={false}/>
+            <>
+                <>
+                    {this.state.isRegistered ? <Redirect to="/"/> : null}
+                </>
+                <div id="RegisterPage">
+                    <Header showLogin={false}/>
 
-                <main>
-                    <h3>Register</h3>
-                    <form noValidate={true} id="login">
-                        <input name="name" type="text" placeholder="User Name" autoComplete="name" 
-                            value={this.state.name} onChange={this.handleInputChange}
-                        />
-                        {!this.state.isNameValid ?
-                            <div className="inputErrorMessage">
-                                User Name must only contain alphanumeric characters and _ <br/> <br/>
-                                User Name must be between 4-20 characters long
-                            </div>
-                        : null}
+                    <main>
+                        <h3>Register</h3>
+                        <form noValidate={true} id="login">
+                            <input name="name" type="text" placeholder="User Name" autoComplete="name" 
+                                value={this.state.name} onChange={this.handleInputChange}
+                            />
+                            {!this.state.isNameValid ?
+                                <div className="inputErrorMessage">
+                                    User Name must only contain alphanumeric characters and _ <br/> <br/>
+                                    User Name must be between 4-20 characters long
+                                </div>
+                            : null}
 
-                        <input name="email" type="text" placeholder="Email" autoComplete="email"
-                            value={this.state.email} onChange={this.handleInputChange}
-                        />
-                        {!this.state.isEmailValid ?
-                            <div className="inputErrorMessage">
-                                Invalid email
-                            </div>
-                        : null}
+                            <input name="email" type="text" placeholder="Email" autoComplete="email"
+                                value={this.state.email} onChange={this.handleInputChange}
+                            />
+                            {!this.state.isEmailValid ?
+                                <div className="inputErrorMessage">
+                                    Invalid email
+                                </div>
+                            : null}
 
-                        <input name="password" type="password" placeholder="Password" autoComplete="password"
-                            value={this.state.password} onChange={this.handleInputChange}
-                        />
-                        <input name="confirmPassword" type="password" placeholder="Confirm Password" 
-                            autoComplete="confirmPassword" value={this.state.confirmPassword} 
-                            onChange={this.handleInputChange}
-                        />
-                        {!this.state.doPasswordMatch ?
-                            <div className="inputErrorMessage">
-                                Passwords do not match
-                            </div>
-                        : null}
-                    </form>
+                            <input name="password" type="password" placeholder="Password" autoComplete="password"
+                                value={this.state.password} onChange={this.handleInputChange}
+                            />
+                            <input name="confirmPassword" type="password" placeholder="Confirm Password" 
+                                autoComplete="confirmPassword" value={this.state.confirmPassword} 
+                                onChange={this.handleInputChange}
+                            />
+                            {!this.state.doPasswordMatch ?
+                                <div className="inputErrorMessage">
+                                    Passwords do not match
+                                </div>
+                            : null}
+                        </form>
 
-                    <div id="buttons">
-                        <Link id={"cancel"} to={"/"}>Cancel</Link>
-                        <button type="button" id="register" onClick={this.handleSubmit}>
-                            Register
-                        </button>
-                    </div>
-                </main>
+                        <div id="buttons">
+                            <Link id={"cancel"} to={"/"}>Cancel</Link>
+                            <button type="button" id="register" onClick={this.handleSubmit}>
+                                Register
+                            </button>
+                        </div>
+                    </main>
 
-                <Footer/>
-            </div>
+                    <Footer/>
+                </div>
+            </>
         );
     }
 }
