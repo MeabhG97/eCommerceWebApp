@@ -19,27 +19,36 @@
         background-color: Constants.$white;
 
         .profileImage{
+            display: flex;
             img#image{
                 height: auto;
                 width: 100%;
                 max-width: 10em;
+                border: solid;
+                border-color: Constants.$charcole;
+                border-radius: 1em;
+                margin: 0.25em;
             }
+
             svg#image{
                 height: auto;
                 width: 100%;
                 max-width: 10em;
+
                 rect{
                     fill: Constants.$white;
                 }
+
                 path{
                     fill: Constants.$rose;
                 }
             }
+
             svg#edit{
                 height: auto;
                 width: 100%;
                 max-width: 2em;
-                position: absolute;
+
                 path{
                     fill: Constants.$green;
                 }

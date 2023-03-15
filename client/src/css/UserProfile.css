@@ -12,10 +12,17 @@
   padding: 2em;
   background-color: #FBF9FF;
 }
+#UserProfile main .profileImage {
+  display: flex;
+}
 #UserProfile main .profileImage img#image {
   height: auto;
   width: 100%;
   max-width: 10em;
+  border: solid;
+  border-color: #3E4C5E;
+  border-radius: 1em;
+  margin: 0.25em;
 }
 #UserProfile main .profileImage svg#image {
   height: auto;
@@ -32,7 +39,6 @@
   height: auto;
   width: 100%;
   max-width: 2em;
-  position: absolute;
 }
 #UserProfile main .profileImage svg#edit path {
   fill: #48A9A6;

@@ -75,7 +75,7 @@ export default class UserProfile extends Component{
                         </div>
                     : 
                         <div className="profileImage">
-                            <img src={`data:;base64,${localStorage.image}`} id="image" alt=""/>
+                            <img src={`data:;base64,${this.state.image}`} id="image" alt=""/>
                             <EditIcon id="edit" onClick={this.editImage}/>
                         </div>
                     }
