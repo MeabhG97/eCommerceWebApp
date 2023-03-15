@@ -12,6 +12,17 @@
   padding: 2em;
   background-color: #FBF9FF;
 }
+#UserProfile main #default svg {
+  height: auto;
+  width: 100%;
+  max-width: 10em;
+}
+#UserProfile main #default svg rect {
+  fill: #FBF9FF;
+}
+#UserProfile main #default svg path {
+  fill: #A599B5;
+}
 #UserProfile main div.userInfo {
   display: flex;
   justify-content: space-between;

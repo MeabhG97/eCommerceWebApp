@@ -18,6 +18,20 @@
         padding: 2em;
         background-color: Constants.$white;
 
+        #default{
+            svg{
+                height: auto;
+                width: 100%;
+                max-width: 10em;
+                rect{
+                    fill: Constants.$white;
+                }
+                path{
+                    fill: Constants.$rose;
+                }
+            }
+        }
+
         div.userInfo{
             display: flex;
             justify-content: space-between;

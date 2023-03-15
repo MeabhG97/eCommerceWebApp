@@ -11,7 +11,7 @@ router.get("/users/all", (req, res) => {
 router.get("/users/one/:id", (req, res) => {
     userModel.findById(req.params.id, (error, data) => {
         if(data){
-            res.json({code: 200, name: data.userName, email: data.email, image: data.image});
+            res.json({code: 200, name: data.userName, email: data.email, image: data.profileImage});
         }
         else{
             res.json({errorMessage: "User not found"});

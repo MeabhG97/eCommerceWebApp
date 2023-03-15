@@ -7,6 +7,7 @@ import Header from "./Header";
 
 import "../css/UserProfile.css";
 import { SERVER_HOST } from "../config/global-constants";
+import {ReactComponent as UserIcon} from "../icons/user.svg";
 
 export default class UserProfile extends Component{
     constructor(props){
@@ -24,6 +25,7 @@ export default class UserProfile extends Component{
                 if(res.data){
                     if(res.data.code === 200){
                         this.setState({name: res.data.name, email: res.data.email, image: res.data.image});
+                        console.log(res.data.image);
                     }
                     else{
                         console.log(res.data.code + res.data.errorMessage);
@@ -37,9 +39,14 @@ export default class UserProfile extends Component{
             <div id="UserProfile">
                 <Header showLogin={false}/>
                 <main>
-                    <div className="profileImage">
-                        
-                    </div>
+                    {this.state.image === "" ?
+                        <div className="profileImage" id="default">
+                            <UserIcon/>
+                        </div>
+                    : 
+                        <div className="profileImage">
+                            {this.state.image}
+                        </div>}
                     <div className="userInfo">
                         <span className="heading">Username</span>
                         <span className="info">{this.state.name}</span>
