@@ -90,6 +90,9 @@ header #buttons .button#user {
 header #buttons .button#user svg path {
   fill: #A4036F;
 }
+header #buttons .button#user svg rect {
+  fill: #FBF9FF;
+}
 header #buttons #logout {
   color: #FBF9FF;
   background-color: #A4036F;

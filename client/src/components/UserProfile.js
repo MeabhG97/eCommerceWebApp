@@ -2,12 +2,15 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
 
+import { SERVER_HOST } from "../config/global-constants";
+
 import Footer from "./Footer";
 import Header from "./Header";
 
-import "../css/UserProfile.css";
-import { SERVER_HOST } from "../config/global-constants";
 import {ReactComponent as UserIcon} from "../icons/user.svg";
+import {ReactComponent as EditIcon} from "../icons/edit.svg";
+
+import "../css/UserProfile.css";
 
 export default class UserProfile extends Component{
     constructor(props){
@@ -15,7 +18,9 @@ export default class UserProfile extends Component{
         this.state = {
             name: "",
             email: "",
-            image: ""
+            image: "",
+            editImage: false,
+            selectedFile: null
         }
     }
 
@@ -25,13 +30,37 @@ export default class UserProfile extends Component{
                 if(res.data){
                     if(res.data.code === 200){
                         this.setState({name: res.data.name, email: res.data.email, image: res.data.image});
-                        console.log(res.data.image);
+                        localStorage.image = res.data.image;
                     }
                     else{
                         console.log(res.data.code + res.data.errorMessage);
                     }
                 }
             });
+    }
+
+    editImage = () => {
+        this.setState({editImage: !this.state.editImage});
+    }
+
+    handleFileChange = (e) => {
+        this.setState({selectedFile: e.target.files[0]});
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        let formData = new FormData();
+        formData.append("image", this.state.selectedFile);
+
+        if(this.state.selectedFile !== prevState.selectedFile){
+            axios.put(`${SERVER_HOST}/user/image/${localStorage.userID}`, formData, {headers: {"Content-Type": "multipart/form-data"}})
+                .then(res => {
+                    if(res.data){
+                        if(res.data.image){
+                            this.setState({image: res.data.image});
+                        }
+                    }
+                });
+        }
     }
 
     render(){
@@ -41,12 +70,20 @@ export default class UserProfile extends Component{
                 <main>
                     {this.state.image === "" ?
                         <div className="profileImage" id="default">
-                            <UserIcon/>
+                            <UserIcon id="image"/>
+                            <EditIcon id="edit" onClick={this.editImage}/>
                         </div>
                     : 
                         <div className="profileImage">
-                            {this.state.image}
-                        </div>}
+                            <img src={`data:;base64,${localStorage.image}`} id="image" alt=""/>
+                            <EditIcon id="edit" onClick={this.editImage}/>
+                        </div>
+                    }
+                    {this.state.editImage === true?
+                        <input type="file" onChange={this.handleFileChange}/>
+                    : 
+                        null
+                    }
                     <div className="userInfo">
                         <span className="heading">Username</span>
                         <span className="info">{this.state.name}</span>

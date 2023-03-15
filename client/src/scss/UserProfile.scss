@@ -18,8 +18,13 @@
         padding: 2em;
         background-color: Constants.$white;
 
-        #default{
-            svg{
+        .profileImage{
+            img#image{
+                height: auto;
+                width: 100%;
+                max-width: 10em;
+            }
+            svg#image{
                 height: auto;
                 width: 100%;
                 max-width: 10em;
@@ -28,6 +33,15 @@
                 }
                 path{
                     fill: Constants.$rose;
+                }
+            }
+            svg#edit{
+                height: auto;
+                width: 100%;
+                max-width: 2em;
+                position: absolute;
+                path{
+                    fill: Constants.$green;
                 }
             }
         }

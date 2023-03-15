@@ -1,13 +1,19 @@
 const router = require("express").Router();
 const userModel = require("../models/users");
 const bcrypt = require("bcrypt");
+const fs = require("fs");
+const multer = require("multer");
+const upload = multer({dest: `${process.env.UPLOADS}`});
+const emptyFolder = require("empty-folder");
 
+//Get all users
 router.get("/users/all", (req, res) => {
     userModel.find((error, data) => {
         res.json(data);
     });
 });
 
+//Get user with matching id
 router.get("/users/one/:id", (req, res) => {
     userModel.findById(req.params.id, (error, data) => {
         if(data){
@@ -19,6 +25,31 @@ router.get("/users/one/:id", (req, res) => {
     });
 });
 
+//Change user image
+router.put("/user/image/:id", upload.single("image"), (req, res) => {
+    if(!req.file){
+        res.json({errorMessage: "No file"});
+    }
+    else if(req.file.mimetype !== "image/png" && 
+        req.file.mimetype !== "image/jpeg" && 
+        req.file.mimetype !== "image/jpg"){
+            fs.unlink(`${process.env.UPLOADS}/${req.file.filename}`, (error) => {res.json({errorMessage: "Invalide file type"})});
+    }
+    else{
+        userModel.findByIdAndUpdate(req.params.id, {profileImage: req.file.filename}, (error, data) => {
+            if(data){
+                fs.readFile(`${process.env.UPLOADS}/${req.file.filename}`, "base64", (error, data) =>{
+                    res.json({image: data});
+                });
+            }
+            else{
+                res.json({errorMessage: "user not found"});
+            }
+        });
+    }
+});
+
+//Register new user
 router.post("/users/register/:name/:email/:password", (req, res) => {
     userModel.findOne({email: req.params.email}, (error, data) => {
         if(data){
@@ -43,6 +74,8 @@ router.post("/users/register/:name/:email/:password", (req, res) => {
     });
 });
 
+
+//Login existing user
 router.post("/users/login/:email/:password", (req, res) => {
     userModel.findOne({email: req.params.email}, (error, data) => {
         if(data){
@@ -61,6 +94,8 @@ router.post("/users/login/:email/:password", (req, res) => {
     });
 });
 
+
+//Logout current user
 router.post("/users/logout", (req, res) => {
     res.json({});
 });
