@@ -7,6 +7,9 @@ import PurchaseHistory from "./components/PurchaseHistory";
 import Register from "./components/Register";
 import UserProfile from "./components/UserProfile";
 import LoggedInRoute from "./components/LoggedInRoute";
+import AdminDashboard from "./components/AdminDashboard";
+import EditProduct from "./components/EditProduct";
+import DeleteProduct from "./components/DeleteProduct";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global-constants";
 
@@ -26,6 +29,9 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path="/Login" component={Login}/>
                     <Route exact path="/Register" component={Register}/>
+                    <Route exact path="/Dashboard" component={AdminDashboard}/>
+                    <Route exact path="/EditProduct/:id" component={EditProduct} />
+                    <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
                     <LoggedInRoute exact path="/UserProfile" component={UserProfile}/>
                     <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
                     <Route path="*" component={MainPage}/>
