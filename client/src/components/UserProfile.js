@@ -85,7 +85,8 @@ export default class UserProfile extends Component{
                     {this.state.editImage === true ?
                         <>
                             <label for="userImage" id="userImageLabel">
-                                <input type="file" id="userImage" onChange={this.handleFileChange}/>
+                                <input type="file" id="userImage" 
+                                    accept="image/png image/jpeg" onChange={this.handleFileChange}/>
                                 <span>Select Image</span>
                             </label>
                         </>

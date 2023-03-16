@@ -38,8 +38,7 @@ router.put("/user/image/:id", upload.single("image"), (req, res) => {
         res.json({errorMessage: "No file"});
     }
     else if(req.file.mimetype !== "image/png" && 
-        req.file.mimetype !== "image/jpeg" && 
-        req.file.mimetype !== "image/jpg"){
+        req.file.mimetype !== "image/jpeg"){
             fs.unlink(`${process.env.UPLOADS}/${req.file.filename}`, (error) => {res.json({errorMessage: "Invalide file type"})});
     }
     else{
