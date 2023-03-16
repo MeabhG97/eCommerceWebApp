@@ -55,6 +55,20 @@
             }
         }
 
+        #userImageLabel{
+            #userImage{
+                display: none;
+            }
+            @include LinkButtonPurpleWhite;
+            width: 10em;
+            height: 2.5em;
+            display: flex;
+            justify-content: space-evenly;
+            justify-items: end;
+            align-items: center;
+            margin: 0.25em;
+        }
+
         div.userInfo{
             display: flex;
             justify-content: space-between;

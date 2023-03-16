@@ -68,19 +68,27 @@ export default class UserProfile extends Component{
             <div id="UserProfile">
                 <Header showLogin={false}/>
                 <main>
+                    <div className="profileImage">
                     {this.state.image === "" ?
-                        <div className="profileImage" id="default">
+                        <>
                             <UserIcon id="image"/>
                             <EditIcon id="edit" onClick={this.editImage}/>
-                        </div>
+                        </>
                     : 
-                        <div className="profileImage">
+                        <>
                             <img src={`data:;base64,${this.state.image}`} id="image" alt=""/>
                             <EditIcon id="edit" onClick={this.editImage}/>
-                        </div>
+                        </>
                     }
-                    {this.state.editImage === true?
-                        <input type="file" onChange={this.handleFileChange}/>
+                    </div>
+
+                    {this.state.editImage === true ?
+                        <>
+                            <label for="userImage" id="userImageLabel">
+                                <input type="file" id="userImage" onChange={this.handleFileChange}/>
+                                <span>Select Image</span>
+                            </label>
+                        </>
                     : 
                         null
                     }
