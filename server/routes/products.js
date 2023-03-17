@@ -11,6 +11,8 @@ router.get(`/products`, (req, res) =>
     })
 })
 
+router.get()
+
 // Create a new product (record)
 router.post(`/products`, (req, res) => 
 {
