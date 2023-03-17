@@ -1,0 +1,40 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+#admin-dashboard{
+    main{
+        div#adminViewOptions{
+            display: flex;
+            justify-content: center;
+            .button{
+                padding: 0;
+                margin: 0.5em;
+                height: 4em;
+                width: 8em;
+                font-size: small;
+                margin-right: 3em;
+            }
+            button{
+                @include buttonWhitePurple;
+
+                display: flex;
+                justify-content: space-evenly;
+                justify-items: end;
+                align-items: center;
+
+                svg{
+                    height: auto;
+                    width: 100%;
+                    max-width: 1.2em;
+                }
+            }
+            #back{
+                @include LinkButtonPurpleWhite;
+                display: flex;
+                justify-content: space-evenly;
+                justify-items: end;
+                align-items: center;
+            }
+        }
+    }
+}

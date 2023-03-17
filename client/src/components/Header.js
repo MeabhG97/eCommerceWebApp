@@ -88,6 +88,7 @@ export default class Header extends Component{
                         }
 
                         {//Show Admin Dashboard to Admins
+                            this.props.showDashboard &&
                             localStorage.userAccessLevel == ACCESS_LEVEL_ADMIN ?
                                 <>
                                     <Link to={"/AdminDashboard"} className="button" id="admin">

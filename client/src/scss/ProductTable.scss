@@ -1,0 +1,9 @@
+@use "./Constants.scss";
+
+table{
+    tr#headings{
+        th{
+            color: Constants.$charcole;
+        }
+    }
+}
