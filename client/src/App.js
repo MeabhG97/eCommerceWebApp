@@ -9,6 +9,7 @@ import UserProfile from "./components/UserProfile";
 import LoggedInRoute from "./components/LoggedInRoute";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global-constants";
+import ProductDetails from "./components/ProductDetails";
 
 const createError = require("http-errors");
 
@@ -26,6 +27,7 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path="/Login" component={Login}/>
                     <Route exact path="/Register" component={Register}/>
+                    <Route exact path="/product/:id" component={ProductDetails}/>
                     <LoggedInRoute exact path="/UserProfile" component={UserProfile}/>
                     <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
                     <Route path="*" component={MainPage}/>

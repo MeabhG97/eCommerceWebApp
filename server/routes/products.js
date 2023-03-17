@@ -11,6 +11,15 @@ router.get(`/products`, (req, res) =>
     })
 })
 
+//Get a single product
+router.get(`/products/:id`, (req, res) => 
+{   
+    productsModel.findById(req.params.id, (error, data) => 
+    {
+        res.json(data);
+    })
+})
+
 // Create a new product (record)
 router.post(`/products`, (req, res) => 
 {
