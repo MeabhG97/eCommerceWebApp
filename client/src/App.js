@@ -12,6 +12,7 @@ import EditProduct from "./components/EditProduct";
 import DeleteProduct from "./components/DeleteProduct";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global-constants";
+import AdminRoute from "./components/AdminRoute";
 
 const createError = require("http-errors");
 
@@ -34,6 +35,7 @@ export default class App extends Component {
                     <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
                     <LoggedInRoute exact path="/UserProfile" component={UserProfile}/>
                     <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
+                    <AdminRoute exact path="/AdminDashbooard" component={AdminDashboard}/>
                     <Route path="*" component={MainPage}/>
                 </Switch>
             </BrowserRouter>

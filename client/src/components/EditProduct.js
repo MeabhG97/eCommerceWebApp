@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import Form from "react-bootstrap/Form"
 import { Redirect, Link } from "react-router-dom"
 import axios from "axios"
 
@@ -85,37 +84,30 @@ export default class EditProduct extends Component{
                 {this.state.redirectToAdminDashboard ? <Redirect to="/Dashboard" /> : null}
                 <h1>Edit a product</h1>
 
-                <Form>
-                    <Form.Group controlId="productName">
-                        <Form.Label>Product name</Form.Label>
-                        <Form.Control ref={(input) => { this.inputToFocus = input }} type="text" name="productName" value={this.state.productName} onChange={this.handleChange}/>
-                    </Form.Group>
+                <form>
+                    <label for="poductName">Product name</label>
+                    <input ref={(input) => { this.inputToFocus = input }} type="text" 
+                        name="productName" value={this.state.productName} onChange={this.handleChange}/>
+                
+                    <label>Description</label>
+                    <input type="text" name="description" value={this.state.description} 
+                        onChange={this.handleChange} />
+                
+                    <label>Category</label>
+                    <input type="text" name="category" value={this.state.category} 
+                        onChange={this.handleChange} />
 
-                    <Form.Group controlId="description">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" name="description" value={this.state.description} onChange={this.handleChange} />
-                    </Form.Group>
+                    <label>Price</label>
+                    <input type="text" name="productPrice" value={this.state.productPrice} 
+                        onChange={this.handleChange} />
+                
+                    <label>Stock count</label>
+                    <input type="text" name="stock" value={this.state.stock} 
+                        onChange={this.handleChange} />
+                </form>
+                <LinkInClass value="Confirm changes" onClick={this.handleSubmit} />
 
-                    <Form.Group controlId="category">
-                        <Form.Label>Category</Form.Label>
-                        <Form.Control type="text" name="category" value={this.state.category} onChange={this.handleChange} />
-                    </Form.Group>
-
-                    <Form.Group controlId="productPrice">
-                        <Form.Label>Price</Form.Label>
-                        <Form.Control type="text" name="productPrice" value={this.state.productPrice} onChange={this.handleChange} />
-                    </Form.Group>
-
-                    <Form.Group controlId="stock">
-                        <Form.Label>Stock count</Form.Label>
-                        <Form.Control type="text" name="stock" value={this.state.stock} onChange={this.handleChange} />
-                    </Form.Group>
-
-
-                    <LinkInClass value="Confirm changes" onClick={this.handleSubmit} />
-
-                    <Link to={"/Dashboard"}>Cancel</Link>
-                </Form>
+                <Link to={"/Dashboard"}>Cancel</Link>
             </div>
             
         )
