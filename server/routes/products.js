@@ -11,6 +11,20 @@ router.get(`/products`, (req, res) =>
     })
 })
 
+//Get product by id
+router.get("/products/:id", (req, res) => {
+    productsModel.findById(req.params.id, (error, data) => {
+        if(data){
+            res.json({productName: data.productName, 
+                description: data.description, 
+                category: data.category,
+                productPrice: data.productPrice,
+                stock: data.stock
+            });
+        }
+    });
+});
+
 // Create a new product (record)
 router.post(`/products`, (req, res) => 
 {

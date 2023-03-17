@@ -1,21 +1,26 @@
 import React, { Component } from "react"
 import ProductTableRow from "./ProductTableRow"
 
+import "../css/ProductTable.css";
 
 export default class ProductTable extends Component{
     render(){
         return(
-            <div>
-                <tr style={{ border: "1px solid black", padding: "20px"}}>
-                    <th>Product Name</th>
-                    <th>Product Description</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th> Controls</th>
-                </tr>
-                {this.props.products.map((product) => <ProductTableRow key={product._id} product={product} />)}
-            </div>
+            <table>
+                <thead>
+                    <tr id="headings">
+                        <th className="name">Name</th>
+                        <th className="description">Description</th>
+                        <th className="category">Category</th>
+                        <th className="price">Price</th>
+                        <th className="stock">Stock</th>
+                        <th className="controls">Controls</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.products.map((product) => <ProductTableRow key={product._id} product={product}/>)}
+                </tbody>
+            </table>
         )
     }
 }

@@ -1,0 +1,28 @@
+table {
+  margin: 1em;
+}
+table thead tr#headings th {
+  color: #02111B;
+  font-weight: 700;
+  font-size: large;
+  text-align: center;
+  padding: 0;
+}
+table thead tr#headings .name {
+  width: 20%;
+}
+table thead tr#headings .description {
+  width: 25%;
+}
+table thead tr#headings .category {
+  width: 10%;
+}
+table thead tr#headings .price {
+  width: 5%;
+}
+table thead tr#headings .stock {
+  width: 5%;
+}
+table thead tr#headings .controls {
+  width: 15%;
+}/*# sourceMappingURL=ProductTable.css.map */

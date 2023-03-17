@@ -11,6 +11,7 @@ import {ReactComponent as LoginIcon} from "../icons/login.svg";
 import {ReactComponent as RegisterIcon} from "../icons/register.svg";
 import {ReactComponent as UserIcon} from "../icons/user.svg";
 import {ReactComponent as LogoutIcon} from "../icons/logout.svg";
+import {ReactComponent as AdminIcon} from "../icons/admin.svg";
 
 import { ACCESS_LEVEL_GUEST } from "../config/global-constants";
 import { ACCESS_LEVEL_USER } from "../config/global-constants";
@@ -87,10 +88,12 @@ export default class Header extends Component{
                         }
 
                         {//Show Admin Dashboard to Admins
+                            this.props.showDashboard &&
                             localStorage.userAccessLevel == ACCESS_LEVEL_ADMIN ?
                                 <>
-                                    <Link to={"/AdminDashboard"} className="button">
+                                    <Link to={"/AdminDashboard"} className="button" id="admin">
                                         <span>Admin</span>
+                                        <AdminIcon/>
                                     </Link>
                                 </>
                             : null

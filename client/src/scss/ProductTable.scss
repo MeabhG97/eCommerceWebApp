@@ -1,0 +1,35 @@
+@use "./Constants.scss";
+
+table{
+    margin: 1em;
+    thead{
+        tr#headings{
+            th{
+                color: Constants.$black;
+                font-weight: 700;
+                font-size: large;
+                text-align: center;
+                padding: 0;
+            }
+
+            .name{
+                width: 20%;
+            }
+            .description{
+                width: 25%;
+            }
+            .category{
+                width: 10%;
+            }
+            .price{
+                width: 5%;
+            }
+            .stock{
+                width: 5%
+            }
+            .controls{
+                width: 15%;
+            }
+        }
+    }
+}
