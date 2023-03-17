@@ -1,13 +1,15 @@
 const router = require("express").Router();
 const userModel = require("../models/users");
 const bcrypt = require("bcrypt");
+const emptyFolder = require("empty-folder");
+
+
 
 router.get("/users/all", (req, res) => {
     userModel.find((error, data) => {
         res.json(data);
     });
 });
-
 
 router.post("/users/register/:name/:email/:password", (req, res) => {
     userModel.findOne({email: req.params.email}, (error, data) => {
@@ -38,7 +40,7 @@ router.post("/users/login/:email/:password", (req, res) => {
         if(data){
             bcrypt.compare(req.params.password, data.passwordHash, (error, result) => {
                 if(result){
-                    res.json({name: data.userName, userID: data._id ,accessLevel: data.accessLevel});
+                    res.json({name: data.userName, userID: data._id, accessLevel: data.accessLevel});
                 }
                 else{
                     res.json({errorMessage: "Incorrect Password"});
@@ -53,6 +55,27 @@ router.post("/users/login/:email/:password", (req, res) => {
 
 router.post("/users/logout", (req, res) => {
     res.json({});
+});
+
+router.post("/users/reset", (req, res) => {
+    userModel.deleteMany({}, (error, data) => {
+        if(data){
+            const adminPassword = "Admin";
+            bcrypt.hash(adminPassword, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (error, hash) => {
+                userModel.create({userName: "Admin", email: "admin@admin.com", passwordHash: hash, 
+                    accessLevel: parseInt(process.env.ACCESS_LEVEL_ADMIN)}, (error, data) => {
+                        if(data){
+                            emptyFolder(process.env.UPLOADS, false, (result) => {
+                                res.json(data);
+                            });
+                        }
+                        else{
+                            res.json({errorMessage: "Admin not created"});
+                        }
+                    });
+            });
+        }
+    });
 });
 
 module.exports = router;

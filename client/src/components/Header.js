@@ -60,7 +60,7 @@ export default class Header extends Component{
                         
                         {//Show Login and Register to Guests
                             this.props.showLogin &&
-                            localStorage.userAccessLevel <= ACCESS_LEVEL_GUEST ?
+                            localStorage.userAccessLevel <= parseInt(ACCESS_LEVEL_GUEST) ?
                                 <>
                                     <Link to={"/Login"} className="button" id="login">
                                         <span>Login</span>
@@ -80,6 +80,16 @@ export default class Header extends Component{
                                     <Link to={"/UserProfile"} className="button" id="user">
                                         <span>Profile</span>
                                         <UserIcon/>
+                                    </Link>
+                                </>
+                            : null
+                        }
+
+                        {//Show Admin Dashboard to Admins
+                            localStorage.userAccessLevel == ACCESS_LEVEL_ADMIN ?
+                                <>
+                                    <Link to={"/AdminDashboard"} className="button">
+                                        <span>Admin</span>
                                     </Link>
                                 </>
                             : null
