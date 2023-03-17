@@ -7,8 +7,6 @@ const multer = require("multer");
 const upload = multer({dest: `${process.env.UPLOADS}`});
 const emptyFolder = require("empty-folder");
 
-const emptyFolder = require("empty-folder");
-
 //Get all users
 router.get("/users/all", (req, res) => {
     userModel.find((error, data) => {
