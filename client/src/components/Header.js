@@ -44,6 +44,22 @@ export default class Header extends Component{
             });
     }
 
+    resetUserDatabase = () => {
+        axios.post(`${SERVER_HOST}/users/reset`)
+            .then(res => {
+                if(res.data){
+                    if(res.data.errorMessage){
+                        console.log(res.data.errorMessage);
+                    }
+                    else{
+                        localStorage.clear();
+                        console.log("reset");
+                        this.setState({logout: true});
+                    }
+                }
+            });
+    }
+
     render(){
         return( 
             <>
@@ -57,10 +73,15 @@ export default class Header extends Component{
                         </Link>
                     </div>
                     <div id="buttons">
+                        <>
+                            <button type="button" onClick={this.resetUserDatabase}>
+                                Reset
+                            </button>
+                        </>
                         
                         {//Show Login and Register to Guests
                             this.props.showLogin &&
-                            localStorage.userAccessLevel <= ACCESS_LEVEL_GUEST ?
+                            localStorage.userAccessLevel <= parseInt(ACCESS_LEVEL_GUEST) ?
                                 <>
                                     <Link to={"/Login"} className="button" id="login">
                                         <span>Login</span>
@@ -75,7 +96,7 @@ export default class Header extends Component{
                         }
 
                         {//Show User Profile to Users
-                            localStorage.userAccessLevel == ACCESS_LEVEL_USER ?
+                            localStorage.userAccessLevel === parseInt(ACCESS_LEVEL_USER) ?
                                 <>
                                     <Link to={"/UserProfile"} className="button" id="user">
                                         <span>Profile</span>
