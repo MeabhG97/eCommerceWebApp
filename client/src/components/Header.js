@@ -44,22 +44,6 @@ export default class Header extends Component{
             });
     }
 
-    resetUserDatabase = () => {
-        axios.post(`${SERVER_HOST}/users/reset`)
-            .then(res => {
-                if(res.data){
-                    if(res.data.errorMessage){
-                        console.log(res.data.errorMessage);
-                    }
-                    else{
-                        localStorage.clear();
-                        console.log("reset");
-                        this.setState({logout: true});
-                    }
-                }
-            });
-    }
-
     render(){
         return( 
             <>
@@ -73,11 +57,6 @@ export default class Header extends Component{
                         </Link>
                     </div>
                     <div id="buttons">
-                        <>
-                            <button type="button" onClick={this.resetUserDatabase}>
-                                Reset
-                            </button>
-                        </>
                         
                         {//Show Login and Register to Guests
                             this.props.showLogin &&
@@ -96,11 +75,21 @@ export default class Header extends Component{
                         }
 
                         {//Show User Profile to Users
-                            localStorage.userAccessLevel === parseInt(ACCESS_LEVEL_USER) ?
+                            localStorage.userAccessLevel == ACCESS_LEVEL_USER ?
                                 <>
                                     <Link to={"/UserProfile"} className="button" id="user">
                                         <span>Profile</span>
                                         <UserIcon/>
+                                    </Link>
+                                </>
+                            : null
+                        }
+
+                        {//Show Admin Dashboard to Admins
+                            localStorage.userAccessLevel == ACCESS_LEVEL_ADMIN ?
+                                <>
+                                    <Link to={"/AdminDashboard"} className="button">
+                                        <span>Admin</span>
                                     </Link>
                                 </>
                             : null

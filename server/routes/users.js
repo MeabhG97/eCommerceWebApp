@@ -40,7 +40,7 @@ router.post("/users/login/:email/:password", (req, res) => {
         if(data){
             bcrypt.compare(req.params.password, data.passwordHash, (error, result) => {
                 if(result){
-                    res.json({name: data.userName, userID: data._id ,accessLevel: data.accessLevel});
+                    res.json({name: data.userName, userID: data._id, accessLevel: data.accessLevel});
                 }
                 else{
                     res.json({errorMessage: "Incorrect Password"});

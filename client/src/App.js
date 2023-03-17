@@ -35,7 +35,7 @@ export default class App extends Component {
                     <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
                     <LoggedInRoute exact path="/UserProfile" component={UserProfile}/>
                     <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
-                    <AdminRoute exact path="/AdminDashbooard" component={AdminDashboard}/>
+                    <AdminRoute exact path="/AdminDashboard" component={AdminDashboard}/>
                     <Route path="*" component={MainPage}/>
                 </Switch>
             </BrowserRouter>
