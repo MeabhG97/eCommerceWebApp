@@ -5,28 +5,31 @@ tr{
     td{
         color: Constants.$charcole;
         text-align: center;
-        padding: 0.5em;
+        padding: 0;
     }
     .name{
-        max-width: 12em;
+        width: 20%;
     }
     .description{
-        max-width: 20em;
+        width: 25%;
     }
     .category{
-        max-width: 12em;
+        width: 10%;
     }
     .price{
-        max-width: 8em;
+        width: 10%;
     }
     .stock{
-        min-width: 8em;
+        width: 10%
     }
     .controls{
-
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .editButton{
             @include LinkButtonGreenWhite;
-            display: block;
+            display: inline-block;
             height: 2em;
             width: 5em;
             display: flex;
@@ -43,7 +46,7 @@ tr{
 
         .deleteButton{
             @include LinkButtonPurpleWhite;
-            display: block;
+            display: inline-block;
             height: 2em;
             width: 5em;
             display: flex;

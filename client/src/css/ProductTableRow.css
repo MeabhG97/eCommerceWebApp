@@ -1,22 +1,28 @@
 tr td {
   color: #3E4C5E;
   text-align: center;
-  padding: 0.5em;
+  padding: 0;
 }
 tr .name {
-  max-width: 12em;
+  width: 20%;
 }
 tr .description {
-  max-width: 20em;
+  width: 25%;
 }
 tr .category {
-  max-width: 12em;
+  width: 10%;
 }
 tr .price {
-  max-width: 8em;
+  width: 10%;
 }
 tr .stock {
-  min-width: 8em;
+  width: 10%;
+}
+tr .controls {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 tr .controls .editButton {
   box-sizing: border-box;
@@ -27,7 +33,7 @@ tr .controls .editButton {
   border-width: 0.1em;
   border-radius: 1em;
   border-color: #48A9A6;
-  display: block;
+  display: inline-block;
   height: 2em;
   width: 5em;
   display: flex;
@@ -53,7 +59,7 @@ tr .controls .deleteButton {
   border-width: 0.1em;
   border-radius: 1em;
   border-color: #A4036F;
-  display: block;
+  display: inline-block;
   height: 2em;
   width: 5em;
   display: flex;

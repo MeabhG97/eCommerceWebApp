@@ -9,12 +9,12 @@ export default class ProductTable extends Component{
             <table>
                 <thead>
                     <tr id="headings">
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Controls</th>
+                        <th className="name">Name</th>
+                        <th className="description">Description</th>
+                        <th className="category">Category</th>
+                        <th className="price">Price</th>
+                        <th className="stock">Stock</th>
+                        <th className="controls">Controls</th>
                     </tr>
                 </thead>
                 <tbody>
