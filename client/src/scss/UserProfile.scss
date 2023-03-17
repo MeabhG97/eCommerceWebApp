@@ -18,11 +18,64 @@
         padding: 2em;
         background-color: Constants.$white;
 
+        .profileImage{
+            display: flex;
+            img#image{
+                height: auto;
+                width: 100%;
+                max-width: 10em;
+                border: solid;
+                border-color: Constants.$charcole;
+                border-radius: 1em;
+                margin: 0.25em;
+            }
+
+            svg#image{
+                height: auto;
+                width: 100%;
+                max-width: 10em;
+
+                rect{
+                    fill: Constants.$white;
+                }
+
+                path{
+                    fill: Constants.$rose;
+                }
+            }
+
+            svg#edit{
+                height: auto;
+                width: 100%;
+                max-width: 2em;
+
+                path{
+                    fill: Constants.$green;
+                }
+            }
+        }
+
+        #userImageLabel{
+            #userImage{
+                display: none;
+            }
+            @include LinkButtonPurpleWhite;
+            width: 10em;
+            height: 2.5em;
+            display: flex;
+            justify-content: space-evenly;
+            justify-items: end;
+            align-items: center;
+            margin: 0.25em;
+        }
+
         div.userInfo{
             display: flex;
             justify-content: space-between;
             width: 50%;
             margin: 0.5em;
+
+            border-bottom: Constants.$rose solid;
 
             span.heading{
                 font-weight: 700;

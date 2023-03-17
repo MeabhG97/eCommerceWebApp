@@ -74,6 +74,11 @@ header{
     
         .button#user{
             @include LinkButtonWhitePurple;
+            svg{
+                rect{
+                    fill: Constants.$white;
+                }
+            }
         }
     
         #logout{

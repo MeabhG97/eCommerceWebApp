@@ -12,11 +12,66 @@
   padding: 2em;
   background-color: #FBF9FF;
 }
+#UserProfile main .profileImage {
+  display: flex;
+}
+#UserProfile main .profileImage img#image {
+  height: auto;
+  width: 100%;
+  max-width: 10em;
+  border: solid;
+  border-color: #3E4C5E;
+  border-radius: 1em;
+  margin: 0.25em;
+}
+#UserProfile main .profileImage svg#image {
+  height: auto;
+  width: 100%;
+  max-width: 10em;
+}
+#UserProfile main .profileImage svg#image rect {
+  fill: #FBF9FF;
+}
+#UserProfile main .profileImage svg#image path {
+  fill: #A599B5;
+}
+#UserProfile main .profileImage svg#edit {
+  height: auto;
+  width: 100%;
+  max-width: 2em;
+}
+#UserProfile main .profileImage svg#edit path {
+  fill: #48A9A6;
+}
+#UserProfile main #userImageLabel {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  width: 10em;
+  height: 2.5em;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+  margin: 0.25em;
+}
+#UserProfile main #userImageLabel #userImage {
+  display: none;
+}
+#UserProfile main #userImageLabel svg path {
+  fill: #FBF9FF;
+}
 #UserProfile main div.userInfo {
   display: flex;
   justify-content: space-between;
   width: 50%;
   margin: 0.5em;
+  border-bottom: #A599B5 solid;
 }
 #UserProfile main div.userInfo span.heading {
   font-weight: 700;
