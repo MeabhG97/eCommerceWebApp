@@ -80,6 +80,15 @@ header{
                 }
             }
         }
+
+        .button#admin{
+            @include LinkButtonWhitePurple;
+            svg{
+                rect{
+                    fill: Constants.$white;
+                }
+            }
+        }
     
         #logout{
             @include buttonPurpleWhite;
