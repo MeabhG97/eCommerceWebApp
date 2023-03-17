@@ -30,7 +30,6 @@ export default class UserProfile extends Component{
                 if(res.data){
                     if(res.data.code === 200){
                         this.setState({name: res.data.name, email: res.data.email, image: res.data.image});
-                        localStorage.image = res.data.image;
                     }
                     else{
                         console.log(res.data.code + res.data.errorMessage);
