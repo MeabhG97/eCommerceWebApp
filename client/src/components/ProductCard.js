@@ -1,10 +1,12 @@
 import React, {Component} from "react"
 import "../css/ProductCard.css";
+import { Link } from "react-router-dom"
 
 
 export default class ProductCard extends Component{
     render(){
         return(
+            <a href={"/product/" + this.props.product._id}>
             <div className="productCard">
                 <div className="product-title">
                     <h3>{this.props.product.productName}</h3>
@@ -17,6 +19,7 @@ export default class ProductCard extends Component{
                     <span className="product-stock">Stock: {this.props.product.stock}</span>
                 </div>
             </div>
+            </a>
         )
     }
 }
