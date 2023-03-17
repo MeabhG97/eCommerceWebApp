@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import { Redirect, Link } from "react-router-dom"
 import axios from "axios"
 
+import Header from "./Header";
+import Footer from "./Footer";
+
 import LinkInClass from "../components/LinkInClass"
 import { SERVER_HOST } from "../config/global-constants"
 
@@ -79,37 +82,47 @@ export default class EditProduct extends Component{
 
     render() {
         return (
-            
-            <div className="form-container">
+            <div id="editProduct">
                 {this.state.redirectToAdminDashboard ? <Redirect to="/Dashboard" /> : null}
-                <h1>Edit a product</h1>
+                <Header showDashboard={true}/>
+                <main>
+                    <div id="productImages">
+                        
+                    </div>
 
-                <form>
-                    <label for="poductName">Product name</label>
-                    <input ref={(input) => { this.inputToFocus = input }} type="text" 
-                        name="productName" defaultValue={this.state.productName} onChange={this.handleChange}/>
-                
-                    <label>Description</label>
-                    <input type="text" name="description" value={this.state.description} 
-                        onChange={this.handleChange} />
-                
-                    <label>Category</label>
-                    <input type="text" name="category" value={this.state.category} 
-                        onChange={this.handleChange} />
+                    <div id="productInfo">
+                        <div id="name">
+                            <input ref={(input) => { this.inputToFocus = input }} type="text" 
+                                name="productName" defaultValue={this.state.productName} 
+                                onChange={this.handleChange}/>
+                        </div>
 
-                    <label>Price</label>
-                    <input type="text" name="productPrice" value={this.state.productPrice} 
-                        onChange={this.handleChange} />
-                
-                    <label>Stock count</label>
-                    <input type="text" name="stock" value={this.state.stock} 
-                        onChange={this.handleChange} />
-                </form>
-                <LinkInClass value="Confirm changes" onClick={this.handleSubmit} />
+                        <div id="description">
+                            <input type="text" name="description" value={this.state.description} 
+                                onChange={this.handleChange} />
+                        </div>
 
-                <Link to={"/Dashboard"}>Cancel</Link>
+                        <div id="category">
+                        <input type="text" name="category" value={this.state.category} 
+                            onChange={this.handleChange} />
+                        </div>
+
+                        <div id="price">
+                        <input type="text" name="productPrice" value={this.state.productPrice} 
+                            onChange={this.handleChange} />
+                        </div>
+
+                        <div id="stock">
+                        <input type="text" name="stock" value={this.state.stock} 
+                            onChange={this.handleChange} />
+                        </div>
+                    </div>
+                    <LinkInClass value="Confirm changes" onClick={this.handleSubmit} />
+
+                    <Link to={"/Dashboard"}>Cancel</Link>
+                </main>
+                <Footer/>
             </div>
-            
         )
     }
 

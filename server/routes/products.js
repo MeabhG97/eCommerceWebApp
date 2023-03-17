@@ -11,6 +11,7 @@ router.get(`/products`, (req, res) =>
     })
 })
 
+//Get product by id
 router.get("/products/:id", (req, res) => {
     productsModel.findById(req.params.id, (error, data) => {
         if(data){
