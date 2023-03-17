@@ -2,6 +2,8 @@
 @use "./Mixins.scss" as *;
 
 #admin-dashboard{
+    background-color: Constants.$white;
+    
     main{
         div#adminViewOptions{
             display: flex;

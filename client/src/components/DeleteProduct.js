@@ -29,12 +29,12 @@ export default class DeleteProduct extends Component {
                 { 
                     console.log("Record deleted")
                 }
-                this.setState({redirectToAdminDashboard:true})
             }
             else 
             {
                 console.log("Record not deleted")
             }
+            this.setState({redirectToAdminDashboard:true})
         })
     }
   

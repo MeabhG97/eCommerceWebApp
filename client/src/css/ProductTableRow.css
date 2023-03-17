@@ -1,0 +1,72 @@
+tr td {
+  color: #3E4C5E;
+  text-align: center;
+  padding: 0.5em;
+}
+tr .name {
+  max-width: 12em;
+}
+tr .description {
+  max-width: 20em;
+}
+tr .category {
+  max-width: 12em;
+}
+tr .price {
+  max-width: 8em;
+}
+tr .stock {
+  min-width: 8em;
+}
+tr .controls .editButton {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #FBF9FF;
+  background-color: #48A9A6;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #48A9A6;
+  display: block;
+  height: 2em;
+  width: 5em;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+  margin: 0.2em;
+}
+tr .controls .editButton svg path {
+  fill: #FBF9FF;
+}
+tr .controls .editButton svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.2em;
+}
+tr .controls .deleteButton {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  display: block;
+  height: 2em;
+  width: 5em;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+  margin: 0.2em;
+}
+tr .controls .deleteButton svg path {
+  fill: #FBF9FF;
+}
+tr .controls .deleteButton svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.2em;
+}/*# sourceMappingURL=ProductTableRow.css.map */

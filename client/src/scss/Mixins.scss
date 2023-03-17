@@ -63,3 +63,19 @@
         }
     }
 }
+
+@mixin LinkButtonGreenWhite{
+    box-sizing: border-box;
+    text-decoration: none;
+    color: Constants.$white;
+    background-color: Constants.$green;
+    border: solid;
+    border-width: 0.1em;
+    border-radius: 1em;
+    border-color: Constants.$green;
+    svg{
+        path{
+            fill: Constants.$white;
+        }
+    }
+}

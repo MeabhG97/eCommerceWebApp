@@ -1,9 +1,15 @@
 @use "./Constants.scss";
 
 table{
-    tr#headings{
-        th{
-            color: Constants.$charcole;
+    margin: 1em;
+    thead{
+        tr#headings{
+            th{
+                color: Constants.$black;
+                font-weight: 700;
+                font-size: large;
+                text-align: center;
+            }
         }
     }
 }

@@ -1,3 +1,6 @@
+#admin-dashboard {
+  background-color: #FBF9FF;
+}
 #admin-dashboard main div#adminViewOptions {
   display: flex;
   justify-content: center;

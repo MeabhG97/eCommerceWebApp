@@ -1,3 +1,9 @@
-table tr#headings th {
-  color: #3E4C5E;
+table {
+  margin: 1em;
+}
+table thead tr#headings th {
+  color: #02111B;
+  font-weight: 700;
+  font-size: large;
+  text-align: center;
 }/*# sourceMappingURL=ProductTable.css.map */

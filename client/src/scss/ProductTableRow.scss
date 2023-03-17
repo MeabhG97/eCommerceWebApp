@@ -1,0 +1,61 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+tr{
+    td{
+        color: Constants.$charcole;
+        text-align: center;
+        padding: 0.5em;
+    }
+    .name{
+        max-width: 12em;
+    }
+    .description{
+        max-width: 20em;
+    }
+    .category{
+        max-width: 12em;
+    }
+    .price{
+        max-width: 8em;
+    }
+    .stock{
+        min-width: 8em;
+    }
+    .controls{
+
+        .editButton{
+            @include LinkButtonGreenWhite;
+            display: block;
+            height: 2em;
+            width: 5em;
+            display: flex;
+            justify-content: space-evenly;
+            justify-items: end;
+            align-items: center;
+            margin: 0.2em;
+            svg{
+                height: auto;
+                width: 100%;
+                max-width: 1.2em;
+            }
+        }
+
+        .deleteButton{
+            @include LinkButtonPurpleWhite;
+            display: block;
+            height: 2em;
+            width: 5em;
+            display: flex;
+            justify-content: space-evenly;
+            justify-items: end;
+            align-items: center;
+            margin: 0.2em;
+            svg{
+                height: auto;
+                width: 100%;
+                max-width: 1.2em;
+            }
+        }
+    }
+}

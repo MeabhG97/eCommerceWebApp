@@ -7,15 +7,19 @@ export default class ProductTable extends Component{
     render(){
         return(
             <table>
-                <tr id="headings">
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Controls</th>
-                </tr>
-                {this.props.products.map((product) => <ProductTableRow key={product._id} product={product} />)}
+                <thead>
+                    <tr id="headings">
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Controls</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.products.map((product) => <ProductTableRow key={product._id} product={product}/>)}
+                </tbody>
             </table>
         )
     }
