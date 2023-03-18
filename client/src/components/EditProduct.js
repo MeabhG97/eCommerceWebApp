@@ -18,6 +18,9 @@ export default class EditProduct extends Component{
             category:"",
             productPrice: "",
             stock: "",
+            images: [],
+            selectedFile: "",
+            imagesData: [],
             redirectToAdminDashboard: false
         }
     }
@@ -38,9 +41,20 @@ export default class EditProduct extends Component{
                             category: res.data.category,
                             productPrice: res.data.productPrice,
                             stock: res.data.stock,
-                            
-                        })
-                    }
+                            images: res.data.images  
+                        }, () => {
+                            this.state.images.map(image => {
+                                return axios.get(`${SERVER_HOST}/products/image/${image}`)
+                                    .then(res => {
+                                        if(res.data){
+                                            this.setState({
+                                                imagesData: [...this.state.imagesData, res.data.image]
+                                            });
+                                        }
+                                    });
+                                })
+                            })
+                    };
                 }
                 else {
                     console.log(`Record not found`)
@@ -50,6 +64,39 @@ export default class EditProduct extends Component{
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
+    }
+
+    handleFileChange = (e) => {
+        this.setState({selectedFile: e.target.files[0]});
+    }
+    
+    componentDidUpdate(prevProps, prevState){
+        if(this.state.selectedFile !== prevState.selectedFile){
+            let formData = new FormData();
+            formData.append("image", this.state.selectedFile);
+
+            axios.put(`${SERVER_HOST}/product/add-image/${this.props.match.params.id}`, formData, {headers: {"Content-Type": "multipart/form-data"}})
+                .then(res => {
+                    if(res.data){
+                        if(res.data.images){
+                            console.log(res.data.images);
+                            this.setState({images: res.data.images}, () => {
+                                this.state.images.map(image => {
+                                    return axios.get(`${SERVER_HOST}/products/image/${image}`)
+                                        .then(res => {
+                                            console.log(res)
+                                            if(res.data){
+                                                this.setState({
+                                                    imagesData: [...this.state.imagesData, res.data.image]
+                                                });
+                                            }
+                                        });
+                                });
+                            });
+                        }
+                    }
+                });
+        }
     }
 
     handleSubmit = (e) => {
@@ -86,8 +133,19 @@ export default class EditProduct extends Component{
                 {this.state.redirectToAdminDashboard ? <Redirect to="/Dashboard" /> : null}
                 <Header showDashboard={true}/>
                 <main>
-                    <div id="productImages">
-                        
+                    <div id="productImagesDisplay">
+                        {this.state.imagesData.length > 0 ?
+                            this.state.imagesData.map(image => <img src={`data:;base64,${image}`}/>)
+                        : 
+                            null    
+                        }
+
+
+                        <label for="productImage" id="productImageLabel">
+                            <input type="file" id="productImage" 
+                                accept="image/png image/jpeg" onChange={this.handleFileChange}/>
+                            <span>Add Image</span>
+                        </label>
                     </div>
 
                     <div id="productInfo">

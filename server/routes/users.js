@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const fs = require("fs");
 const multer = require("multer");
-const upload = multer({dest: `${process.env.UPLOADS}`});
+const upload = multer({dest: `${process.env.UPLOAD_USER}`});
 const emptyFolder = require("empty-folder");
 
 //Get all users
@@ -19,7 +19,7 @@ router.get("/users/one/:id", (req, res) => {
     userModel.findById(req.params.id, (error, data) => {
         if(data){
             if(data.profileImage !== ""){
-                fs.readFile(`${process.env.UPLOADS}/${data.profileImage}`, "base64", (error, dataImage) =>{
+                fs.readFile(`${process.env.UPLOAD_USER}/${data.profileImage}`, "base64", (error, dataImage) =>{
                     res.json({code: 200, name: data.userName, email: data.email, image: dataImage});
                 });
             }
@@ -40,12 +40,12 @@ router.put("/user/image/:id", upload.single("image"), (req, res) => {
     }
     else if(req.file.mimetype !== "image/png" && 
         req.file.mimetype !== "image/jpeg"){
-            fs.unlink(`${process.env.UPLOADS}/${req.file.filename}`, (error) => {res.json({errorMessage: "Invalide file type"})});
+            fs.unlink(`${process.env.UPLOAD_USER}/${req.file.filename}`, (error) => {res.json({errorMessage: "Invalide file type"})});
     }
     else{
         userModel.findByIdAndUpdate(req.params.id, {profileImage: req.file.filename}, (error, data) => {
             if(data){
-                fs.readFile(`${process.env.UPLOADS}/${req.file.filename}`, "base64", (error, data) =>{
+                fs.readFile(`${process.env.UPLOAD_USER}/${req.file.filename}`, "base64", (error, data) =>{
                     res.json({image: data});
                 });
             }
@@ -115,7 +115,7 @@ router.post("/users/reset", (req, res) => {
                 userModel.create({userName: "Admin", email: "admin@admin.com", passwordHash: hash, 
                     accessLevel: parseInt(process.env.ACCESS_LEVEL_ADMIN)}, (error, data) => {
                         if(data){
-                            emptyFolder(process.env.UPLOADS, false, (result) => {
+                            emptyFolder(process.env.UPLOAD_USER, false, (result) => {
                                 res.json(data);
                             });
                         }
