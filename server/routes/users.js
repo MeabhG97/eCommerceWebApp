@@ -33,6 +33,18 @@ router.get("/users/one/:id", (req, res) => {
     });
 });
 
+//Get User Image
+router.get("/user/get/image/:filename", (req, res) => {
+    fs.readFile(`${process.env.UPLOAD_USER}/${req.params.filename}`, "base64", (error, data) => {
+        if(data){
+            res.json({image: data});
+        }
+        else{
+            res.json({image: null});
+        }
+    });
+});
+
 //Change user image
 router.put("/user/image/:id", upload.single("image"), (req, res) => {
     if(!req.file){
@@ -107,6 +119,7 @@ router.post("/users/logout", (req, res) => {
     res.json({});
 });
 
+//User Database Reset
 router.post("/users/reset", (req, res) => {
     userModel.deleteMany({}, (error, data) => {
         if(data){

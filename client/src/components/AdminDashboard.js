@@ -1,10 +1,11 @@
 import React, {Component} from "react";
-import ProductTable from "./ProductTable";
 import { Link } from "react-router-dom"
 import axios from "axios"
 
 import Header from "./Header";
 import Footer from "./Footer";
+import ProductTable from "./ProductTable";
+import UserTable from "./UserTable";
 
 import {SERVER_HOST} from "../config/global-constants"
 
@@ -21,6 +22,7 @@ export default class AdminDashboard extends Component{
         
         this.state = {
             products : [],
+            users: [],
             viewProducts: true
         }
 
@@ -30,18 +32,22 @@ export default class AdminDashboard extends Component{
         axios.get(`${SERVER_HOST}/products`)
             .then(res => {
                 if (res.data) {
-                    console.log(res.data)
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
                     }
                     else {
-                        console.log("Records read")
                         this.setState({ products: res.data })
-                        console.log(res.data)
                     }
                 }
                 else {
                     console.log("Record not found")
+                }
+            });
+
+        axios.get(`${SERVER_HOST}/users/all`)
+            .then(res => {
+                if(res.data){
+                    this.setState({users: res.data});
                 }
             })
     }
@@ -86,7 +92,7 @@ export default class AdminDashboard extends Component{
                     {this.state.viewProducts ?
                         <ProductTable products={this.state.products}/>
                     :
-                        null
+                        <UserTable users={this.state.users}/>
                     }
                 </main>
 
