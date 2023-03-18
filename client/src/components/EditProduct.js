@@ -85,10 +85,10 @@ export default class EditProduct extends Component{
                         if(res.data.images){
                             console.log(res.data.images);
                             this.setState({images: res.data.images}, () => {
+                                this.setState({imagesData: []});
                                 this.state.images.map(image => {
                                     return axios.get(`${SERVER_HOST}/products/image/${image}`)
                                         .then(res => {
-                                            console.log(res)
                                             if(res.data){
                                                 this.setState({
                                                     imagesData: [...this.state.imagesData, res.data.image]

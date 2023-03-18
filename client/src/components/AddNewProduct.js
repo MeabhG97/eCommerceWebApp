@@ -44,16 +44,15 @@ export default class AddNewProduct extends Component{
             let formData = new FormData();
             formData.append("image", this.state.selectedFile);
 
-            axios.put(`${SERVER_HOST}/product/add-image/${this.props.match.params.id}`, formData, {headers: {"Content-Type": "multipart/form-data"}})
+            axios.put(`${SERVER_HOST}/product/new-image`, formData, {headers: {"Content-Type": "multipart/form-data"}})
                 .then(res => {
                     if(res.data){
-                        if(res.data.images){
-                            console.log(res.data.images);
-                            this.setState({images: res.data.images}, () => {
+                        if(res.data.filename){
+                            this.setState({images: [...this.state.images, res.data.filename]}, () => {
+                                this.setState({imagesData: []});
                                 this.state.images.map(image => {
                                     return axios.get(`${SERVER_HOST}/products/image/${image}`)
                                         .then(res => {
-                                            console.log(res)
                                             if(res.data){
                                                 this.setState({
                                                     imagesData: [...this.state.imagesData, res.data.image]
