@@ -72,9 +72,13 @@ export default class AdminDashboard extends Component{
                             <UserIcon/>
                         </button>
 
+                        <Link to={"/AddNewProduct"} id="addnew">
+                                <span>Add New Product</span>
+                        </Link>
+
                         <Link to={"/"} className="button" id="back">
                         <span>Back</span>
-                    </Link>
+                        </Link>
                     </div>
 
                     {this.state.viewProducts ?

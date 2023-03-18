@@ -5,14 +5,12 @@ import axios from "axios"
 import Header from "./Header";
 import Footer from "./Footer";
 
-import LinkInClass from "../components/LinkInClass"
 import { SERVER_HOST } from "../config/global-constants"
 
 import {ReactComponent as NoImage} from "../icons/no-image.svg";
 
-import "../css/EditProduct.css";
 
-export default class EditProduct extends Component{
+export default class AddNewProduct extends Component{
     constructor(props){
         super(props)
 
@@ -30,40 +28,7 @@ export default class EditProduct extends Component{
     }
 
     componentDidMount() {
-        this.inputToFocus.focus()
-
-        axios.get(`${SERVER_HOST}/products/${this.props.match.params.id}`)
-            .then(res => {
-                if (res.data) {
-                    if (res.data.errorMessage) {    
-                        console.log(res.data.errorMessage)
-                    }
-                    else {
-                        this.setState({
-                            productName: res.data.productName,
-                            description: res.data.description,
-                            category: res.data.category,
-                            productPrice: res.data.productPrice,
-                            stock: res.data.stock,
-                            images: res.data.images  
-                        }, () => {
-                            this.state.images.map(image => {
-                                return axios.get(`${SERVER_HOST}/products/image/${image}`)
-                                    .then(res => {
-                                        if(res.data){
-                                            this.setState({
-                                                imagesData: [...this.state.imagesData, res.data.image]
-                                            });
-                                        }
-                                    });
-                                })
-                            })
-                    };
-                }
-                else {
-                    console.log(`Record not found`)
-                }
-            })
+        
     }
 
     handleChange = (e) => {
@@ -176,7 +141,7 @@ export default class EditProduct extends Component{
                             <button type="button" id="confirm" onClick={this.handleSubmit}>
                                 <span>Confirm</span>
                             </button>
-                            <Link to={"/AdminDashboard"} id="cancel">
+                            <Link to={"/Dashboard"} id="cancel">
                                 <span>Cancel</span>
                             </Link>
                         </div>
