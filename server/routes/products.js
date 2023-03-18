@@ -43,12 +43,22 @@ router.get("/products/image/:filename", (req, res) => {
 });
 
 // Create a new product (record)
-router.post(`/products`, (req, res) => 
-{
-    productsModel.create(req.body, (error, data) => 
-    {
-        res.json(data);
-    })
+router.post(`/products/new/:name/:description/:category/:price/:stock/:images`, (req, res) => {
+   productsModel.create({
+        productName: req.params.name,
+        description: req.params.description,
+        category: req.params.category,
+        productPrice: req.params.price,
+        stock: req.params.stock,
+        images: req.params.images
+   }, (error, data) => {
+        if(data){
+            res.json({code: 200});
+        }
+        else{
+            res.json({errorMessage:"Product not created"});
+        }
+   });
 })
 
 // Edit a product

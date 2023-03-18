@@ -27,10 +27,6 @@ export default class AddNewProduct extends Component{
         }
     }
 
-    componentDidMount() {
-        
-    }
-
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
@@ -70,35 +66,23 @@ export default class AddNewProduct extends Component{
     handleSubmit = (e) => {
         e.preventDefault()
 
-        const editedProduct = {
-            productName: this.state.productName,
-            description: this.state.description,
-            category: this.state.category,
-            productPrice: this.state.productPrice,
-            stock: this.state.stock
-        }
-
-        axios.put(`${SERVER_HOST}/products/${this.props.match.params.id}`, editedProduct)
+        axios.post(`${SERVER_HOST}/products/new/${this.state.productName}/${this.state.description}/${this.state.category}/${this.state.productPrice}/${this.state.stock}/${this.state.images}`)
             .then(res => {
-                if (res.data) {
-                    if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage)
+                if(res.data){
+                    if(res.data.errorMessage){
+                        console.log(res.data.errorMessage);
                     }
-                    else {
-                        console.log(`Record updated`)
-                        this.setState({ redirectToAdminDashboard: true })
+                    else{
+                        this.setState({redirectToAdminDashboard: true});
                     }
                 }
-                else {
-                    console.log(`Record not updated`)
-                }
-            })
+            });
     }
 
     render() {
         return (
             <div id="editProduct">
-                {this.state.redirectToAdminDashboard ? <Redirect to="/Dashboard" /> : null}
+                {this.state.redirectToAdminDashboard ? <Redirect to="/AdminDashboard" /> : null}
                 <Header showDashboard={true}/>
                 <main>
                     <div id="productImagesDisplay">
