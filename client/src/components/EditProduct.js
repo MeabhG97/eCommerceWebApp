@@ -160,7 +160,7 @@ export default class EditProduct extends Component{
                         <div id="info">
                             Product Information
                         </div>
-                        
+
                         <input ref={(input) => { this.inputToFocus = input }} type="text" 
                             name="productName" value={this.state.productName} 
                             onChange={this.handleChange} placeholder="Product Name"/>
@@ -178,8 +178,12 @@ export default class EditProduct extends Component{
                         
 
                         <div id="buttons">
-                            <LinkInClass value="Confirm changes" onClick={this.handleSubmit} />
-                            <Link to={"/Dashboard"}>Cancel</Link>
+                            <button type="button" id="confirm" onClick={this.handleSubmit}>
+                                <span>Confirm</span>
+                            </button>
+                            <Link to={"/Dashboard"} id="cancel">
+                                <span>Cancel</span>
+                            </Link>
                         </div>
                     </div>
                 </main>
