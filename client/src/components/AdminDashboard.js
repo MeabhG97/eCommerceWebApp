@@ -10,6 +10,7 @@ import {SERVER_HOST} from "../config/global-constants"
 
 import {ReactComponent as UserIcon} from "../icons/user.svg";
 import {ReactComponent as ProductIcon} from "../icons/box.svg";
+import {ReactComponent as PlusIcon} from "../icons/plus.svg";
 
 import "../css/AdminDashboard.css";
 
@@ -72,8 +73,9 @@ export default class AdminDashboard extends Component{
                             <UserIcon/>
                         </button>
 
-                        <Link to={"/AddNewProduct"} id="addnew">
-                                <span>Add New Product</span>
+                        <Link to={"/AddNewProduct"} className="button" id="addnew">
+                                <span>Add New</span>
+                                <PlusIcon/>
                         </Link>
 
                         <Link to={"/"} className="button" id="back">

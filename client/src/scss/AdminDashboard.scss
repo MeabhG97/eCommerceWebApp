@@ -31,6 +31,20 @@
                     max-width: 1.2em;
                 }
             }
+
+            #addnew{
+                @include LinkButtonWhitePurple;
+                display: flex;
+                justify-content: space-evenly;
+                justify-items: end;
+                align-items: center;
+                svg{
+                    height: auto;
+                    width: 100%;
+                    max-width: 1.5em;
+                }
+            }
+
             #back{
                 @include LinkButtonPurpleWhite;
                 display: flex;

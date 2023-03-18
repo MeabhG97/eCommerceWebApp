@@ -38,6 +38,28 @@
   width: 100%;
   max-width: 1.2em;
 }
+#admin-dashboard main div#adminViewOptions #addnew {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+}
+#admin-dashboard main div#adminViewOptions #addnew svg path {
+  fill: #A4036F;
+}
+#admin-dashboard main div#adminViewOptions #addnew svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.5em;
+}
 #admin-dashboard main div#adminViewOptions #back {
   box-sizing: border-box;
   text-decoration: none;
