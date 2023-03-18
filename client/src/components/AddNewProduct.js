@@ -9,6 +9,7 @@ import { SERVER_HOST } from "../config/global-constants"
 
 import {ReactComponent as NoImage} from "../icons/no-image.svg";
 
+import "../css/AddNewProduct.css";
 
 export default class AddNewProduct extends Component{
     constructor(props){
