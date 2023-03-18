@@ -1,7 +1,7 @@
 @use "./Constants.scss";
 
 @mixin fonts{
-    font-family: "Roboto Mono", monospace;
+    font-family: Constants.$font;
 }
 
 @mixin buttonWhitePurple{

@@ -70,6 +70,11 @@ export default class EditProduct extends Component{
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    handleTextAreaChange = (e) => {
+        console.log(e);
+        this.setState({})
+    }
+
     handleFileChange = (e) => {
         this.setState({selectedFile: e.target.files[0]});
     }
@@ -138,49 +143,45 @@ export default class EditProduct extends Component{
                 <Header showDashboard={true}/>
                 <main>
                     <div id="productImagesDisplay">
-                        <label for="productImage" id="productImageLabel">
-                            <input type="file" id="productImage" 
+                        <label htmlFor="productImage" id="productImageLabel">
+                            <input type="file" id="productImage" name="productImage"
                                 accept="image/png image/jpeg" onChange={this.handleFileChange}/>
                             <span>Add Image</span>
                         </label>
 
                         {this.state.imagesData.length > 0 ?
-                            this.state.imagesData.map(image => <img src={`data:;base64,${image}`}/>)
+                            this.state.imagesData.map(image => <img src={`data:;base64,${image}`} className="image"/>)
                         : 
                             <NoImage/>
                         }
                     </div>
 
                     <div id="productInfo">
-                        <div id="name">
-                            <input ref={(input) => { this.inputToFocus = input }} type="text" 
-                                name="productName" defaultValue={this.state.productName} 
-                                onChange={this.handleChange}/>
+                        <div id="info">
+                            Product Information
                         </div>
+                        
+                        <input ref={(input) => { this.inputToFocus = input }} type="text" 
+                            name="productName" value={this.state.productName} 
+                            onChange={this.handleChange} placeholder="Product Name"/>
+                        <textarea value={this.state.description} name="description" 
+                            onChange={this.handleChange} placeholder="Product Description"></textarea>
 
-                        <div id="description">
-                            <input type="text" name="description" value={this.state.description} 
-                                onChange={this.handleChange} />
-                        </div>
-
-                        <div id="category">
                         <input type="text" name="category" value={this.state.category} 
-                            onChange={this.handleChange} />
-                        </div>
+                            onChange={this.handleChange} placeholder="Product Category"/>
 
-                        <div id="price">
                         <input type="text" name="productPrice" value={this.state.productPrice} 
-                            onChange={this.handleChange} />
-                        </div>
-
-                        <div id="stock">
+                            onChange={this.handleChange} placeholder="Product Price"/>
+                        
                         <input type="text" name="stock" value={this.state.stock} 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange} placeholder="Stock Count"/>
+                        
+
+                        <div id="buttons">
+                            <LinkInClass value="Confirm changes" onClick={this.handleSubmit} />
+                            <Link to={"/Dashboard"}>Cancel</Link>
                         </div>
                     </div>
-                    <LinkInClass value="Confirm changes" onClick={this.handleSubmit} />
-
-                    <Link to={"/Dashboard"}>Cancel</Link>
                 </main>
                 <Footer/>
             </div>

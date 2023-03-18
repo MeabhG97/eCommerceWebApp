@@ -2,13 +2,35 @@
 @use "./Mixins.scss" as *;
 
 main{
+    @include fonts;
     display: flex;
     div#productImagesDisplay{
         width: 60%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        #productImageLabel{
+            @include LinkButtonPurpleWhite;
+            width: 10em;
+            height: 2.5em;
+            display: flex;
+            justify-content: space-evenly;
+            justify-items: end;
+            align-items: center;
+            margin: 0.25em;
+            #productImage{
+                display: none;
+            }
+        }
+
+        .image{
+            height: auto;
+            width: 80%;
+        }
 
         svg{
             height: auto;
-            width: 50%;
+            width: 80%;
             path{
                 fill: Constants.$rose;
             }
@@ -17,5 +39,27 @@ main{
 
     div#productInfo{
         width: 40%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        #info{
+            font-size: 1.5em;
+            margin: 0.5em;
+            color: Constants.$purple;
+        }
+
+        input{
+            display: block;
+            width: 80%;
+            margin: 0.5em;
+        }
+
+        textarea{
+            display: block;
+            width: 80%;
+            height: 20%;
+            margin: 0.5em;
+        }
     }
 }

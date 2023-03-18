@@ -2,6 +2,7 @@
 @use "./Mixins.scss" as *;
 
 tr{
+    @include fonts;
     td{
         color: Constants.$charcole;
         text-align: center;
