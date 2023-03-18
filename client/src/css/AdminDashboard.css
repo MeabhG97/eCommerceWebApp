@@ -1,5 +1,10 @@
 #admin-dashboard {
   background-color: #FBF9FF;
+  font-family: "Roboto Mono", monospace;
+}
+#admin-dashboard main {
+  display: flex;
+  flex-flow: column;
 }
 #admin-dashboard main div#adminViewOptions {
   display: flex;

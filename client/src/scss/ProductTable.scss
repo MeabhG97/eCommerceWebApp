@@ -1,6 +1,7 @@
 @use "./Constants.scss";
 
 table{
+    @include fonts;
     margin: 1em;
     thead{
         tr#headings{
