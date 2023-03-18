@@ -47,4 +47,25 @@ main .productInfo {
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin: 1em;
+}
+main .productInfo .info {
+  margin: 0.5em;
+  color: #3E4C5E;
+}
+main .productInfo #name {
+  font-size: x-large;
+  font-weight: 700;
+  color: #02111B;
+}
+main .productInfo #description {
+  text-align: center;
+}
+main .productInfo #inStock {
+  color: #48A9A6;
+  font-weight: 500;
+}
+main .productInfo #outStock {
+  color: #A4036F;
+  font-weight: 500;
 }/*# sourceMappingURL=ProductDetails.css.map */

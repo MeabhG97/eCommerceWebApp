@@ -44,7 +44,11 @@ export default class ProductCard extends Component{
                 
                 <div className="product-info">
                     <span className="product-price">€{this.props.product.productPrice}</span>
-                    <span className="product-stock">Stock: {this.props.product.stock}</span>
+                    {this.props.product.stock > 0 ?
+                        <span className="product-stock" id="inStock">In Stock</span>
+                    :
+                        <span className="product-stock" id="outStock">In Stock</span>
+                    }
                 </div>
             </div>
             </a>

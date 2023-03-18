@@ -42,14 +42,21 @@
             width: 50%;
             text-align: center;
             margin-top: 0.25em;
-            color: Constants.$purple;
+            font-weight: 600;
+            color: Constants.$rose;
         }
         .product-stock{
             display: block;
             width: 50%;
             text-align: center;
             margin-top: 0.25em;
+            font-weight: 500;
+        }
+        #inStock{
             color: Constants.$green;
+        }
+        #outStock{
+            color: Constants.$purple;
         }
     }
 }

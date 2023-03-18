@@ -44,5 +44,26 @@ main{
         display: flex;
         flex-flow: column;
         align-items: center;
+        margin: 1em;
+        .info{
+            margin: 0.5em;
+            color: Constants.$charcole;
+        }
+        #name{
+            font-size: x-large;
+            font-weight: 700;
+            color: Constants.$black;
+        }
+        #description{
+            text-align: center;
+        }
+        #inStock{
+            color: Constants.$green;
+            font-weight: 500;
+        }
+        #outStock{
+            color: Constants.$purple;
+            font-weight: 500;
+        }
     }
 }

@@ -107,11 +107,15 @@ export default class ProductDetails extends Component{
                         }
                     </div>
                     <div className="productInfo">
-                            {this.state.productName}
-                            <span className="info">{this.state.description}</span>
-                            <span className="info">{this.state.category}</span>
-                            <span className="info">€{this.state.productPrice}</span>
-                            <span className="info">Stock: {this.state.stock}</span>
+                        <span className="info" id="name">{this.state.productName}</span>
+                        <span className="info" id="description">{this.state.description}</span>
+                        <span className="info" id="category">{this.state.category}</span>
+                        <span className="info" id="price">€{this.state.productPrice}</span>
+                        {this.state.stock > 0 ?
+                            <span className="info" id="inStock">In Stock</span>
+                        :
+                            <span className="info" id="outStock">Out Of Stock</span>
+                        }
                     </div>
                 </main>
                 <Footer/>
