@@ -13,11 +13,14 @@ tr{
     }
 
     .image{
+        img#image{
+            height: auto;
+            max-width: 7em;
+        }
         
         svg#image{
             height: auto;
-            width: 20%;
-            max-width: 5em;
+            max-width: 7em;
 
             rect{
                 fill: Constants.$white;

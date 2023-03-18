@@ -40,7 +40,7 @@ router.get("/user/get/image/:filename", (req, res) => {
             res.json({image: data});
         }
         else{
-            res.json({image: null});
+            res.json({errorMessage: "Not found", image: null});
         }
     });
 });
@@ -138,6 +138,12 @@ router.post("/users/reset", (req, res) => {
                     });
             });
         }
+    });
+});
+
+router.delete("/user/delete/:id", (req, res) => {
+    userModel.findByIdAndDelete(req.params.id, (error, data) =>{
+        res.json(data);
     });
 });
 

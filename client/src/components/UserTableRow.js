@@ -18,12 +18,14 @@ export default class ProductTableRow extends Component{
     }
 
     componentDidMount(){
-        axios.get(`${SERVER_HOST}/user/get/image/${this.props.user.profileImage}`)
-            .then(res => {
-                if(res.data){
-                    this.setState({imageData: res.data.image});
-                }
-            });
+        if(this.props.user.profileImage !== ""){
+            axios.get(`${SERVER_HOST}/user/get/image/${this.props.user.profileImage}`)
+                .then(res => {
+                    if(res.data){
+                        this.setState({imageData: res.data.image});
+                    }
+                });
+        }
     }
 
     render(){
@@ -42,7 +44,7 @@ export default class ProductTableRow extends Component{
                     Purchases
                 </td>
                 <td className="controls">
-                    <Link to={"/user/delete/" + this.props.user._id} 
+                    <Link to={"/DeleteUser/" + this.props.user._id} 
                         className="deleteButton">
                             <span>Delete</span>
                             <DeleteIcon/>
