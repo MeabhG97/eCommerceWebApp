@@ -1,5 +1,5 @@
 #SideMenu.opened {
-  grid-area: sidemenu;
+  width: 100em;
   background-color: #A599B5;
 }
 
