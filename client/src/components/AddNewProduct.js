@@ -125,7 +125,7 @@ export default class AddNewProduct extends Component{
                             <button type="button" id="confirm" onClick={this.handleSubmit}>
                                 <span>Confirm</span>
                             </button>
-                            <Link to={"/Dashboard"} id="cancel">
+                            <Link to={"/AdminDashboard"} id="cancel">
                                 <span>Cancel</span>
                             </Link>
                         </div>

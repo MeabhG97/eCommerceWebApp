@@ -7,6 +7,8 @@ import { SERVER_HOST } from "../config/global-constants";
 import {ReactComponent as DeleteIcon} from "../icons/delete.svg";
 import {ReactComponent as UserIcon} from "../icons/user.svg";
 
+import "../css/UserTableRow.css";
+
 export default class ProductTableRow extends Component{
     constructor(props){
         super(props);

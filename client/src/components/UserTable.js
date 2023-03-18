@@ -4,6 +4,8 @@ import UserTableRow from "./UserTableRow";
 
 import { ACCESS_LEVEL_ADMIN } from "../config/global-constants";
 
+import "../css/UserTable.css";
+
 export default class UserTable extends Component{
     render(){
         return(
