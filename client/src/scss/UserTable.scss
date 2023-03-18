@@ -1,0 +1,38 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+table{
+    @include fonts;
+    margin: 1em;
+
+    thead{
+        tr#headings{
+            th{
+                color: Constants.$black;
+                font-weight: 700;
+                font-size: large;
+                text-align: center;
+                padding: 0;
+                margin: 0.5em;
+            }
+
+            .name{
+                width: 20%;
+            }
+            .image{
+                width: 20%;
+            }
+            .email{
+                width: 20%;
+            }
+        
+            .purchases{
+                width: 20%;
+            }
+        
+            .controls{
+                width: 20%;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+tr {
+  font-family: "Roboto Mono", monospace;
+}
+tr td {
+  color: #3E4C5E;
+  text-align: center;
+  padding: 0;
+}
+tr .name {
+  width: 20%;
+}
+tr .image img#image {
+  height: auto;
+  max-width: 7em;
+}
+tr .image svg#image {
+  height: auto;
+  max-width: 7em;
+}
+tr .image svg#image rect {
+  fill: #FBF9FF;
+}
+tr .image svg#image path {
+  fill: #A599B5;
+}
+tr .email {
+  width: 20%;
+}
+tr .purchases {
+  width: 20%;
+}
+tr .controls {
+  width: 20%;
+}/*# sourceMappingURL=UserTableRow.css.map */

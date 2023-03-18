@@ -6,8 +6,8 @@ let productsSchema = new mongoose.Schema(
         description:{type: String},
         category:{type: String},
         productPrice:{type: Number},
-        stock:{type: Number}
-        
+        stock:{type: Number},
+        images:[{type: String}]
     },{
         collection: `products`
     }

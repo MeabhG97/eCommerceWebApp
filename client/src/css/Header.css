@@ -1,4 +1,5 @@
 header {
+  font-family: "Roboto Mono", monospace;
   grid-area: header;
   background-color: #FBF9FF;
   color: #A4036F;
@@ -89,6 +90,25 @@ header #buttons .button#user {
 }
 header #buttons .button#user svg path {
   fill: #A4036F;
+}
+header #buttons .button#user svg rect {
+  fill: #FBF9FF;
+}
+header #buttons .button#admin {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+header #buttons .button#admin svg path {
+  fill: #A4036F;
+}
+header #buttons .button#admin svg rect {
+  fill: #FBF9FF;
 }
 header #buttons #logout {
   color: #FBF9FF;

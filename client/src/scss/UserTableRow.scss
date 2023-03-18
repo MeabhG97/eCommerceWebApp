@@ -1,0 +1,46 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+tr{
+    @include fonts;
+    td{
+        color: Constants.$charcole;
+        text-align: center;
+        padding: 0;
+    }
+    .name{
+        width: 20%;
+    }
+
+    .image{
+        img#image{
+            height: auto;
+            max-width: 7em;
+        }
+        
+        svg#image{
+            height: auto;
+            max-width: 7em;
+
+            rect{
+                fill: Constants.$white;
+            }
+
+            path{
+                fill: Constants.$rose;
+            }
+        }
+    }
+
+    .email{
+        width: 20%;
+    }
+
+    .purchases{
+        width: 20%;
+    }
+
+    .controls{
+        width: 20%;
+    }
+}

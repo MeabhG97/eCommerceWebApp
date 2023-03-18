@@ -1,0 +1,27 @@
+table {
+  font-family: "Roboto Mono", monospace;
+  margin: 1em;
+}
+table thead tr#headings th {
+  color: #02111B;
+  font-weight: 700;
+  font-size: large;
+  text-align: center;
+  padding: 0;
+  margin: 0.5em;
+}
+table thead tr#headings .name {
+  width: 20%;
+}
+table thead tr#headings .image {
+  width: 20%;
+}
+table thead tr#headings .email {
+  width: 20%;
+}
+table thead tr#headings .purchases {
+  width: 20%;
+}
+table thead tr#headings .controls {
+  width: 20%;
+}/*# sourceMappingURL=UserTable.css.map */

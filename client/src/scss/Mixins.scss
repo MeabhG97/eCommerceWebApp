@@ -1,7 +1,7 @@
 @use "./Constants.scss";
 
 @mixin fonts{
-    font-family: "Roboto Mono", monospace;
+    font-family: Constants.$font;
 }
 
 @mixin buttonWhitePurple{
@@ -57,6 +57,22 @@
     border-width: 0.1em;
     border-radius: 1em;
     border-color: Constants.$purple;
+    svg{
+        path{
+            fill: Constants.$white;
+        }
+    }
+}
+
+@mixin LinkButtonGreenWhite{
+    box-sizing: border-box;
+    text-decoration: none;
+    color: Constants.$white;
+    background-color: Constants.$green;
+    border: solid;
+    border-width: 0.1em;
+    border-radius: 1em;
+    border-color: Constants.$green;
     svg{
         path{
             fill: Constants.$white;

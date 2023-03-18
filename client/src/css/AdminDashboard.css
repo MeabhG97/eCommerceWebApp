@@ -1,0 +1,79 @@
+#admin-dashboard {
+  background-color: #FBF9FF;
+  font-family: "Roboto Mono", monospace;
+}
+#admin-dashboard main {
+  display: flex;
+  flex-flow: column;
+}
+#admin-dashboard main div#adminViewOptions {
+  display: flex;
+  justify-content: center;
+}
+#admin-dashboard main div#adminViewOptions .button {
+  padding: 0;
+  margin: 0.5em;
+  height: 4em;
+  width: 8em;
+  font-size: small;
+  margin-right: 3em;
+}
+#admin-dashboard main div#adminViewOptions button {
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+}
+#admin-dashboard main div#adminViewOptions button svg path {
+  fill: #A4036F;
+}
+#admin-dashboard main div#adminViewOptions button svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.2em;
+}
+#admin-dashboard main div#adminViewOptions #addnew {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+}
+#admin-dashboard main div#adminViewOptions #addnew svg path {
+  fill: #A4036F;
+}
+#admin-dashboard main div#adminViewOptions #addnew svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.5em;
+}
+#admin-dashboard main div#adminViewOptions #back {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: end;
+  align-items: center;
+}
+#admin-dashboard main div#adminViewOptions #back svg path {
+  fill: #FBF9FF;
+}/*# sourceMappingURL=AdminDashboard.css.map */

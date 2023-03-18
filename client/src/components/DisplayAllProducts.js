@@ -19,14 +19,11 @@ export default class DisplayAllProducts extends Component{
         axios.get(`${SERVER_HOST}/products`)
             .then(res => {
                 if (res.data) {
-                    console.log(res.data)
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
                     }
                     else {
-                        console.log("Records read")
                         this.setState({ products: res.data })
-                        console.log(res.data)
                     }
                 }
                 else {
