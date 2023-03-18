@@ -1,6 +1,8 @@
 @use "./Constants.scss";
+@use "./Mixins.scss" as *;
 
 footer{
+    @include fonts;
     grid-area: footer;
     background-color: Constants.$green;
     border-top: solid;
