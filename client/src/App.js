@@ -10,12 +10,11 @@ import LoggedInRoute from "./components/LoggedInRoute";
 import AdminDashboard from "./components/AdminDashboard";
 import EditProduct from "./components/EditProduct";
 import DeleteProduct from "./components/DeleteProduct";
-
-import { ACCESS_LEVEL_GUEST } from "./config/global-constants";
 import AdminRoute from "./components/AdminRoute";
 import AddNewProduct from "./components/AddNewProduct";
+import DeleteUser from "./components/DeleteUser";
 
-const createError = require("http-errors");
+import { ACCESS_LEVEL_GUEST } from "./config/global-constants";
 
 if(typeof localStorage.userAccessLevel === "undefined"){
     localStorage.userAccessLevel = ACCESS_LEVEL_GUEST;
@@ -35,8 +34,9 @@ export default class App extends Component {
                     <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
                     <AdminRoute exact path="/AdminDashboard" component={AdminDashboard}/>
                     <AdminRoute exact path="/AddNewProduct" component={AddNewProduct}/>
-                    <AdminRoute exact path="/EditProduct/:id" component={EditProduct} />
-                    <AdminRoute exact path="/DeleteProduct/:id" component={DeleteProduct} />
+                    <AdminRoute exact path="/EditProduct/:id" component={EditProduct}/>
+                    <AdminRoute exact path="/DeleteProduct/:id" component={DeleteProduct}/>
+                    <AdminRoute exact path="/DeleteUser/:id" component={DeleteUser} />
                     <Route path="*" component={MainPage}/>
                 </Switch>
             </BrowserRouter>

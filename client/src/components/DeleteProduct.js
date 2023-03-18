@@ -43,7 +43,7 @@ export default class DeleteProduct extends Component {
     {
         return (
             <div>   
-                {this.state.redirectToAdminDashboard ? <Redirect to="/Dashboard/"/> : null}                      
+                {this.state.redirectToAdminDashboard ? <Redirect to="/AdminDashboard/"/> : null}                      
             </div>
         )
     }

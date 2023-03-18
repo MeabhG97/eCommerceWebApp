@@ -4,6 +4,7 @@
 table{
     @include fonts;
     margin: 1em;
+
     thead{
         tr#headings{
             th{
@@ -12,25 +13,25 @@ table{
                 font-size: large;
                 text-align: center;
                 padding: 0;
+                margin: 0.5em;
             }
 
             .name{
                 width: 20%;
             }
-            .description{
-                width: 25%;
+            .image{
+                width: 20%;
             }
-            .category{
-                width: 10%;
+            .email{
+                width: 20%;
             }
-            .price{
-                width: 5%;
+        
+            .purchases{
+                width: 20%;
             }
-            .stock{
-                width: 5%
-            }
+        
             .controls{
-                width: 15%;
+                width: 20%;
             }
         }
     }
