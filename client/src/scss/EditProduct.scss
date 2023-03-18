@@ -1,0 +1,21 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+main{
+    display: flex;
+    div#productImagesDisplay{
+        width: 60%;
+
+        svg{
+            height: auto;
+            width: 50%;
+            path{
+                fill: Constants.$rose;
+            }
+        }
+    }
+
+    div#productInfo{
+        width: 40%;
+    }
+}

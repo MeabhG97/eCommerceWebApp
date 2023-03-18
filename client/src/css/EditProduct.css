@@ -1,0 +1,16 @@
+main {
+  display: flex;
+}
+main div#productImagesDisplay {
+  width: 60%;
+}
+main div#productImagesDisplay svg {
+  height: auto;
+  width: 50%;
+}
+main div#productImagesDisplay svg path {
+  fill: #A599B5;
+}
+main div#productInfo {
+  width: 40%;
+}/*# sourceMappingURL=EditProduct.css.map */

@@ -8,6 +8,10 @@ import Footer from "./Footer";
 import LinkInClass from "../components/LinkInClass"
 import { SERVER_HOST } from "../config/global-constants"
 
+import {ReactComponent as NoImage} from "../icons/no-image.svg";
+
+import "../css/EditProduct.css";
+
 export default class EditProduct extends Component{
     constructor(props){
         super(props)
@@ -134,18 +138,17 @@ export default class EditProduct extends Component{
                 <Header showDashboard={true}/>
                 <main>
                     <div id="productImagesDisplay">
-                        {this.state.imagesData.length > 0 ?
-                            this.state.imagesData.map(image => <img src={`data:;base64,${image}`}/>)
-                        : 
-                            null    
-                        }
-
-
                         <label for="productImage" id="productImageLabel">
                             <input type="file" id="productImage" 
                                 accept="image/png image/jpeg" onChange={this.handleFileChange}/>
                             <span>Add Image</span>
                         </label>
+
+                        {this.state.imagesData.length > 0 ?
+                            this.state.imagesData.map(image => <img src={`data:;base64,${image}`}/>)
+                        : 
+                            <NoImage/>
+                        }
                     </div>
 
                     <div id="productInfo">
