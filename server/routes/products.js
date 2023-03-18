@@ -43,12 +43,22 @@ router.get("/products/image/:filename", (req, res) => {
 });
 
 // Create a new product (record)
-router.post(`/products`, (req, res) => 
-{
-    productsModel.create(req.body, (error, data) => 
-    {
-        res.json(data);
-    })
+router.post(`/products/new/:name/:description/:category/:price/:stock/:images`, (req, res) => {
+   productsModel.create({
+        productName: req.params.name,
+        description: req.params.description,
+        category: req.params.category,
+        productPrice: req.params.price,
+        stock: req.params.stock,
+        images: req.params.images
+   }, (error, data) => {
+        if(data){
+            res.json({code: 200});
+        }
+        else{
+            res.json({errorMessage:"Product not created"});
+        }
+   });
 })
 
 // Edit a product
@@ -59,6 +69,22 @@ router.put(`/products/:id`, (req, res) =>
         res.json(data);
     })        
 })
+
+//Add Image for new Product
+router.put("/product/new-image", upload.single("image"), (req, res) => {
+    if(!req.file){
+        res.json({errorMessage: "No file uploaded"});
+    }
+    else if(req.file.mimetype !== "image/png" && 
+        req.file.mimetype !== "image/jpeg"){
+            fs.unlink(`${process.env.UPLOAD_PRODUCT}/${req.file.filename}`, (error) => {
+                res.json({errorMessage: "Invalide file type"});
+            });
+    }
+    else{
+        res.json({filename: req.file.filename});
+    }
+});
 
 //Add new Image
 router.put("/product/add-image/:id", upload.single("image"), (req, res) => {
@@ -72,7 +98,8 @@ router.put("/product/add-image/:id", upload.single("image"), (req, res) => {
             });
     }
     else{
-        productsModel.findByIdAndUpdate(req.params.id, {$push: {images: req.file.filename}}, {returnDocument:'after'}, (error, data) =>{
+        productsModel.findByIdAndUpdate(req.params.id, {$push: {images: req.file.filename}}, 
+            {returnDocument:'after'}, (error, data) =>{
             if(data){
                 console.log(data.images);
                 res.json({images: data.images});            

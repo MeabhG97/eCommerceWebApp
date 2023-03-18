@@ -5,14 +5,13 @@ import axios from "axios"
 import Header from "./Header";
 import Footer from "./Footer";
 
-import LinkInClass from "../components/LinkInClass"
 import { SERVER_HOST } from "../config/global-constants"
 
 import {ReactComponent as NoImage} from "../icons/no-image.svg";
 
-import "../css/EditProduct.css";
+import "../css/AddNewProduct.css";
 
-export default class EditProduct extends Component{
+export default class AddNewProduct extends Component{
     constructor(props){
         super(props)
 
@@ -29,43 +28,6 @@ export default class EditProduct extends Component{
         }
     }
 
-    componentDidMount() {
-        this.inputToFocus.focus()
-
-        axios.get(`${SERVER_HOST}/products/${this.props.match.params.id}`)
-            .then(res => {
-                if (res.data) {
-                    if (res.data.errorMessage) {    
-                        console.log(res.data.errorMessage)
-                    }
-                    else {
-                        this.setState({
-                            productName: res.data.productName,
-                            description: res.data.description,
-                            category: res.data.category,
-                            productPrice: res.data.productPrice,
-                            stock: res.data.stock,
-                            images: res.data.images  
-                        }, () => {
-                            this.state.images.map(image => {
-                                return axios.get(`${SERVER_HOST}/products/image/${image}`)
-                                    .then(res => {
-                                        if(res.data){
-                                            this.setState({
-                                                imagesData: [...this.state.imagesData, res.data.image]
-                                            });
-                                        }
-                                    });
-                                })
-                            })
-                    };
-                }
-                else {
-                    console.log(`Record not found`)
-                }
-            })
-    }
-
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
@@ -79,12 +41,11 @@ export default class EditProduct extends Component{
             let formData = new FormData();
             formData.append("image", this.state.selectedFile);
 
-            axios.put(`${SERVER_HOST}/product/add-image/${this.props.match.params.id}`, formData, {headers: {"Content-Type": "multipart/form-data"}})
+            axios.put(`${SERVER_HOST}/product/new-image`, formData, {headers: {"Content-Type": "multipart/form-data"}})
                 .then(res => {
                     if(res.data){
-                        if(res.data.images){
-                            console.log(res.data.images);
-                            this.setState({images: res.data.images}, () => {
+                        if(res.data.filename){
+                            this.setState({images: [...this.state.images, res.data.filename]}, () => {
                                 this.setState({imagesData: []});
                                 this.state.images.map(image => {
                                     return axios.get(`${SERVER_HOST}/products/image/${image}`)
@@ -106,35 +67,23 @@ export default class EditProduct extends Component{
     handleSubmit = (e) => {
         e.preventDefault()
 
-        const editedProduct = {
-            productName: this.state.productName,
-            description: this.state.description,
-            category: this.state.category,
-            productPrice: this.state.productPrice,
-            stock: this.state.stock
-        }
-
-        axios.put(`${SERVER_HOST}/products/${this.props.match.params.id}`, editedProduct)
+        axios.post(`${SERVER_HOST}/products/new/${this.state.productName}/${this.state.description}/${this.state.category}/${this.state.productPrice}/${this.state.stock}/${this.state.images}`)
             .then(res => {
-                if (res.data) {
-                    if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage)
+                if(res.data){
+                    if(res.data.errorMessage){
+                        console.log(res.data.errorMessage);
                     }
-                    else {
-                        console.log(`Record updated`)
-                        this.setState({ redirectToAdminDashboard: true })
+                    else{
+                        this.setState({redirectToAdminDashboard: true});
                     }
                 }
-                else {
-                    console.log(`Record not updated`)
-                }
-            })
+            });
     }
 
     render() {
         return (
             <div id="editProduct">
-                {this.state.redirectToAdminDashboard ? <Redirect to="/Dashboard" /> : null}
+                {this.state.redirectToAdminDashboard ? <Redirect to="/AdminDashboard" /> : null}
                 <Header showDashboard={true}/>
                 <main>
                     <div id="productImagesDisplay">
@@ -176,7 +125,7 @@ export default class EditProduct extends Component{
                             <button type="button" id="confirm" onClick={this.handleSubmit}>
                                 <span>Confirm</span>
                             </button>
-                            <Link to={"/AdminDashboard"} id="cancel">
+                            <Link to={"/Dashboard"} id="cancel">
                                 <span>Cancel</span>
                             </Link>
                         </div>
