@@ -1,0 +1,50 @@
+main {
+  display: flex;
+  height: auto;
+  min-height: 100vh;
+}
+main .productImages {
+  margin: 1em;
+  width: 70%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+main .productImages img {
+  height: auto;
+  width: 80%;
+}
+main .productImages .buttons {
+  margin: 1em;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+main .productImages .buttons .arrowButton {
+  color: #A4036F;
+  background-color: #FBF9FF;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+}
+main .productImages .buttons .arrowButton svg path {
+  fill: #A4036F;
+}
+main .productImages .buttons .arrowButton svg {
+  height: auto;
+  width: 5em;
+}
+main .productImages svg.noImage {
+  height: auto;
+  width: 60%;
+}
+main .productImages svg.noImage path {
+  fill: #A599B5;
+}
+main .productInfo {
+  width: 30%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}/*# sourceMappingURL=ProductDetails.css.map */

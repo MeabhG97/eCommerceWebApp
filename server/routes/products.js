@@ -101,7 +101,6 @@ router.put("/product/add-image/:id", upload.single("image"), (req, res) => {
         productsModel.findByIdAndUpdate(req.params.id, {$push: {images: req.file.filename}}, 
             {returnDocument:'after'}, (error, data) =>{
             if(data){
-                console.log(data.images);
                 res.json({images: data.images});            
             }
             else{
