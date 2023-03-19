@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 export default class ShoppingBag extends Component{
     constructor(props){
-        super(porps);
+        super(props);
         this.state = {
             
         }

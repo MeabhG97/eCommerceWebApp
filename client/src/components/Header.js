@@ -12,6 +12,7 @@ import {ReactComponent as RegisterIcon} from "../icons/register.svg";
 import {ReactComponent as UserIcon} from "../icons/user.svg";
 import {ReactComponent as LogoutIcon} from "../icons/logout.svg";
 import {ReactComponent as AdminIcon} from "../icons/admin.svg";
+import {ReactComponent as ShoppingBagIcon} from "../icons/shopping-bag.svg";
 
 import { ACCESS_LEVEL_GUEST } from "../config/global-constants";
 import { ACCESS_LEVEL_USER } from "../config/global-constants";
@@ -22,7 +23,15 @@ export default class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            logout:false
+            logout:false,
+            numberItemsInBag: 0
+        }
+    }
+
+    componentDidMount(){
+        if(typeof localStorage.shoppingBag !== "undefined"){
+            let items = JSON.parse(localStorage.getItem("shoppingBag"));
+            this.setState({numberItemsInBag: items.length});
         }
     }
 
@@ -110,11 +119,25 @@ export default class Header extends Component{
                             : null
                         }
 
-                        {this.props.showMenuButton ? 
-                            (this.props.menuOpen ? 
-                                <MenuCloseIcon className={"menuIcon"} onClick={this.props.handleMenuOpen}/> : 
-                                <MenuIcon className={"menuIcon"} onClick={this.props.handleMenuOpen}/>)
-                        : null}
+                        {//Show shopping bag
+                            this.props.showShoppingBag ?
+                                <Link to={"/ShoppingBag"}>
+                                    <ShoppingBagIcon/>
+                                    {this.state.numberItemsInBag > 0 ?
+                                        <span>{this.state.numberItemsInBag}</span>
+                                        : null}
+                                </Link>
+                            :
+                                null
+                        }
+
+                        {//Show Menu open close
+                            this.props.showMenuButton ? 
+                                (this.props.menuOpen ? 
+                                    <MenuCloseIcon className={"menuIcon"} onClick={this.props.handleMenuOpen}/> : 
+                                    <MenuIcon className={"menuIcon"} onClick={this.props.handleMenuOpen}/>)
+                            : null
+                        }
                     </div> 
                 </header>
             </>  
