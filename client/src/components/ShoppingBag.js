@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import {ReactComponent as MinusIcon} from "../icons/minus.svg";
 import {ReactComponent as PlusIcon} from "../icons/plus.svg";
 import {ReactComponent as RemoveIcon} from "../icons/cross.svg";
+import {ReactComponent as NoImageIcon} from "../icons/no-image.svg";
 
 import { SERVER_HOST } from "../config/global-constants";
 
@@ -126,9 +127,9 @@ export default class ShoppingBag extends Component{
                                     <tr>
                                         <td>{product.name}</td>
                                         {typeof product.image !== "undefined"?
-                                            <td>{product.image}</td>
+                                            <td className="image">{product.image}</td>
                                         :
-                                            <td>null</td>
+                                            <td className="noImage"><NoImageIcon/></td>
                                         }
                                         <td className="quantity">
                                             <MinusIcon onClick={() => this.decreaseQuantity(product.id)}/>

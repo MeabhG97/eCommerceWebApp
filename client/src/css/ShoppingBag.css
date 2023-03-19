@@ -14,6 +14,19 @@
   font-size: larger;
   color: #02111B;
 }
+.shoppingBag main table tbody tr .image img {
+  height: auto;
+  width: 100%;
+  max-width: 3em;
+}
+.shoppingBag main table tbody tr .noImage svg {
+  height: auto;
+  width: 100%;
+  max-width: 3em;
+}
+.shoppingBag main table tbody tr .noImage svg path {
+  fill: #A599B5;
+}
 .shoppingBag main table tbody tr .quantity {
   display: flex;
   align-items: center;

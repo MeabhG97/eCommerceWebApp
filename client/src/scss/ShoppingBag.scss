@@ -22,6 +22,23 @@
         table{
             tbody{
                 tr{
+                    .image{
+                        img{
+                            height: auto;
+                            width: 100%;
+                            max-width: 3em;
+                        }
+                    }
+                    .noImage{
+                        svg{
+                            height: auto;
+                            width: 100%;
+                            max-width: 3em;
+                            path{
+                                fill: Constants.$rose;
+                            }
+                        }
+                    }
                     .quantity{
                         display: flex;
                         align-items: center;
