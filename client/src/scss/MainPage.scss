@@ -2,43 +2,17 @@
 @use "./Mixins.scss" as *;
 
 #MainPage{
-    display: grid;
-    grid-template-columns: 80fr 20fr;
-    grid-template-rows: 20vh 1fr 10vh;
-    
     @include fonts;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    height: auto;
 
-    main{
-        grid-area: main;
-        background-color: Constants.$white;
+    .mainAndMenu{
         display: flex;
-    }
-}
-
-@media screen and (min-width: Constants.$laptopMax){
-    #MainPage.opened{
-        grid-template-areas:    "header     header"
-                                "main   sidemenu"
-                                "footer     footer";
-    }
-
-    #MainPage.closed{
-        grid-template-areas:    "header     header"
-                                "main   main"
-                                "footer     footer";  
-    }
-}
-
-@media screen and (max-width: Constants.$laptopMin){
-    #MainPage.opened{
-        grid-template-areas:    "header     header"
-                                "sidemenu   sidemenu"
-                                "footer     footer";
-    }
-
-    #MainPage.closed{
-        grid-template-areas:    "header     header"
-                                "main   main"
-                                "footer     footer";  
+        main{
+            background-color: Constants.$white;
+            height: auto;
+        }
     }
 }

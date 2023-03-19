@@ -3,13 +3,8 @@
 
 #LoginPage{
     @include fonts;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 10fr 55fr 5fr;
-    grid-template-areas:    "header"
-                            "main"
-                            "footer";
+    min-height: 100vh;
+    height: auto;
 
     main{
         display: flex;

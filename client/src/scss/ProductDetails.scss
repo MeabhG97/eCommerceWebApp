@@ -1,0 +1,69 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+main{
+    display: flex;
+    height: auto;
+    min-height: 100vh;
+
+    .productImages{
+        margin: 1em;
+        width: 70%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        img{
+            height: auto;
+            width: 80%;
+        }
+        .buttons{
+            margin: 1em;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            .arrowButton{
+                @include buttonWhitePurple;
+                svg{
+                    height: auto;
+                    width: 5em;
+                }
+            }
+        }
+
+        svg.noImage{
+            height: auto;
+            width: 60%;
+            path{
+                fill: Constants.$rose;
+            }
+        }
+    }
+
+    .productInfo{
+        width: 30%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 1em;
+        .info{
+            margin: 0.5em;
+            color: Constants.$charcole;
+        }
+        #name{
+            font-size: x-large;
+            font-weight: 700;
+            color: Constants.$black;
+        }
+        #description{
+            text-align: center;
+        }
+        #inStock{
+            color: Constants.$green;
+            font-weight: 500;
+        }
+        #outStock{
+            color: Constants.$purple;
+            font-weight: 500;
+        }
+    }
+}

@@ -1,6 +1,8 @@
 #admin-dashboard {
   background-color: #FBF9FF;
   font-family: "Roboto Mono", monospace;
+  min-height: 100vh;
+  height: auto;
 }
 #admin-dashboard main {
   display: flex;

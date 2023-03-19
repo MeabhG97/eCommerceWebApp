@@ -3,7 +3,6 @@
 
 footer{
     @include fonts;
-    grid-area: footer;
     background-color: Constants.$green;
     border-top: solid;
     border-width: 0.2em;

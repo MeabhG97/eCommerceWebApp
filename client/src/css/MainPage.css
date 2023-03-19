@@ -1,28 +1,14 @@
 #MainPage {
-  display: grid;
-  grid-template-columns: 80fr 20fr;
-  grid-template-rows: 20vh 1fr 10vh;
   font-family: "Roboto Mono", monospace;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  height: auto;
 }
-#MainPage main {
-  grid-area: main;
-  background-color: #FBF9FF;
+#MainPage .mainAndMenu {
   display: flex;
 }
-
-@media screen and (min-width: 1280px) {
-  #MainPage.opened {
-    grid-template-areas: "header     header" "main   sidemenu" "footer     footer";
-  }
-  #MainPage.closed {
-    grid-template-areas: "header     header" "main   main" "footer     footer";
-  }
-}
-@media screen and (max-width: 1279px) {
-  #MainPage.opened {
-    grid-template-areas: "header     header" "sidemenu   sidemenu" "footer     footer";
-  }
-  #MainPage.closed {
-    grid-template-areas: "header     header" "main   main" "footer     footer";
-  }
+#MainPage .mainAndMenu main {
+  background-color: #FBF9FF;
+  height: auto;
 }/*# sourceMappingURL=MainPage.css.map */

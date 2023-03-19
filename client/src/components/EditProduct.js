@@ -83,7 +83,6 @@ export default class EditProduct extends Component{
                 .then(res => {
                     if(res.data){
                         if(res.data.images){
-                            console.log(res.data.images);
                             this.setState({images: res.data.images}, () => {
                                 this.setState({imagesData: []});
                                 this.state.images.map(image => {

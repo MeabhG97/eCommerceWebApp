@@ -3,7 +3,6 @@
 
 header{
     @include fonts;
-    grid-area: header;
     background-color: Constants.$white;
     color: Constants.$purple;
     border-bottom: solid;

@@ -23,12 +23,13 @@ export default class MainPage extends Component {
             <div id="MainPage" className={this.state.menuOpen ? "opened" : "closed"}>
                 <Header menuOpen={this.state.menuOpen} handleMenuOpen={this.handleMenuOpen}
                     showLogin={true} showMenuButton={true} showDashboard={true}/>
-                <SideMenu menuOpen={this.state.menuOpen}/>
-                
-                <main className={this.state.menuOpen ? "opened" : "closed"}>
-                    <DisplayAllProducts/>
-                </main>
-                
+
+                <div className="mainAndMenu">
+                    <main className={this.state.menuOpen ? "opened" : "closed"}>
+                        <DisplayAllProducts/>
+                    </main>
+                    <SideMenu menuOpen={this.state.menuOpen}/>
+                </div>
                 <Footer/>
             </div>
         );

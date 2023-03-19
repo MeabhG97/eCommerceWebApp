@@ -1,8 +1,9 @@
 @use "./Constants.scss";
 
 #SideMenu.opened{
-    grid-area: sidemenu;
+    width: 100em;
     background-color: Constants.$rose;
+    
 }
 
 #SideMenu.closed{
