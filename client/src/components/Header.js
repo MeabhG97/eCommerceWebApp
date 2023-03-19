@@ -121,7 +121,7 @@ export default class Header extends Component{
 
                         {//Show shopping bag
                             this.props.showShoppingBag ?
-                                <Link to={"/ShoppingBag"}>
+                                <Link to={"/ShoppingBag"} className="shoppingBag">
                                     <ShoppingBagIcon/>
                                     {this.state.numberItemsInBag > 0 ?
                                         <span>{this.state.numberItemsInBag}</span>
