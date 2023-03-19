@@ -1,5 +1,10 @@
 import React, {Component} from "react";
-import {Redirect, Link} from "react-router-dom";
+import {Redirect} from "react-router-dom";
+
+import Header from "./Header";
+import Footer from "./Footer";
+
+import "../css/PayPalMessage.css";
 
 export default class PayPalMessage extends Component{
     static type = {
@@ -45,24 +50,28 @@ export default class PayPalMessage extends Component{
     render(){
         return(
             <div className="paypal">
-                {this.state.redirect ?
-                    <Redirect to={"/"}/>
-                :
-                    null
-                }
-                <span className="heading">{this.state.heading}</span>
-                <span className="body">{this.state.body}</span>
-                {this.props.match.params.type === PayPalMessage.type.SUCCESS ?
-                    <div className="orderID">
-                        <span className="message">PayPal Order ID:</span>
-                        <span className="id">{this.props.match.params.orderID}</span>
-                    </div>
+                <Header/>
+                <main>
+                    {this.state.redirect ?
+                        <Redirect to={"/"}/>
                     :
-                    null
-                }
-                <button type="button" onClick={this.continue}>
-                    <span>Continue</span>
-                </button>
+                        null
+                    }
+                    <span className="heading">{this.state.heading}</span>
+                    <span className="body">{this.state.body}</span>
+                    {this.props.match.params.type === PayPalMessage.type.SUCCESS ?
+                        <div className="orderID">
+                            <span className="message">PayPal Order ID:</span>
+                            <span className="id">{this.props.match.params.orderID}</span>
+                        </div>
+                        :
+                        null
+                    }
+                    <button type="button" onClick={this.continue}>
+                        <span>Continue</span>
+                    </button>
+                </main>
+                <Footer/>
             </div>
         );
     }

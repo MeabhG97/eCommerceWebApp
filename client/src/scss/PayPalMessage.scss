@@ -1,0 +1,27 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+.paypal{
+    main{
+        display: flex;
+        flex-flow: column;
+        background-color: Constants.$white;
+        padding: 2em;
+        align-items: center;
+        span{
+            margin: 1em;
+        }
+        .heading{
+            font-size: x-large;
+            font-weight: 600;
+        }
+        div{
+            margin: 1em;
+        }
+        button{
+            @include buttonPurpleWhite;
+            width: 10em;
+            height: 3em;
+        }
+    }
+}
