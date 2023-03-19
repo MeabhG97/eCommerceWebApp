@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import Purchase from "./Purchase";
 
 import {ReactComponent as MinusIcon} from "../icons/minus.svg";
 import {ReactComponent as PlusIcon} from "../icons/plus.svg";
@@ -53,7 +54,6 @@ export default class ShoppingBag extends Component{
     }
 
     calculateTotalPrice = () => {
-        console.log("total")
         let total = 0;
         this.state.products.map(product => {
             total += product.price * product.quantity;
@@ -155,6 +155,7 @@ export default class ShoppingBag extends Component{
                             </tr>
                         </tfoot>
                     </table>
+                    <Purchase price={this.state.totalPrice} products={this.state.products}/>
                 </main>
                 <Footer/>
             </div>

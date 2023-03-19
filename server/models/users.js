@@ -4,7 +4,8 @@ const productSchema = require("./products");
 let purchasesSchema = new mongoose.Schema(
     {
         date: {type: Date, default: Date.now},
-        products: [{type: mongoose.Schema.Types.ObjectId, ref: "products"}]
+        products: [{id: {type: String}, quantity:{type: Number}}],
+        paypalID: {type: String}
     }
 );
 

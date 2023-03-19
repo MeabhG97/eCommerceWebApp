@@ -68,6 +68,20 @@ router.put("/user/image/:id", upload.single("image"), (req, res) => {
     }
 });
 
+//New Purchase
+router.put("/user/purchase/:id/:paypalId/:products", (req, res) => {
+    userModel.findByIdAndUpdate(req.params.id,
+        {$push: {purchases: {paypayID: req.params.paypalId, products: JSON.parse(req.params.products)}}}, 
+        {returnDocument:'after'}, (error, data) => {
+            if(data){
+                res.json(data);
+            }
+            else{
+                res.json({errorMessage: "Purchase not added"});
+            }
+        });
+});
+
 //Register new user
 router.post("/users/register/:name/:email/:password", (req, res) => {
     userModel.findOne({email: req.params.email}, (error, data) => {
