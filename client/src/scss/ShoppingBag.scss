@@ -1,0 +1,65 @@
+@use "./Constants.scss";
+@use "./Mixins.scss" as *;
+
+.shoppingBag{
+    main{
+        display: flex;
+        flex-flow: column;
+        height: auto;
+        min-height: 100vh;
+        padding: 2em;
+        background-color: Constants.$white;
+
+        .heading{
+            font-size: xx-large;
+            color: Constants.$black;
+        }
+        .subHeading{
+            font-size: larger;
+            color: Constants.$black;
+        }
+
+        table{
+            tbody{
+                tr{
+                    .quantity{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        svg{
+                            height: auto;
+                            width: 100%;
+                            max-width: 1.5em;
+                            path{
+                                fill: Constants.$purple;
+                            }
+                        }
+                        span{
+                            margin: 0.25em;
+                        }
+                    }
+
+                    .removeItem{
+                        svg{
+                            height: auto;
+                            width: 100%;
+                            max-width: 1em;
+                            path{
+                                fill: Constants.$purple;
+                            }
+                        }
+                    }
+                }
+            }
+
+            tfoot{
+                tr{
+                    td{
+                        color: Constants.$black;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+}

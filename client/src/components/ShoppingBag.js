@@ -4,7 +4,13 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 
+import {ReactComponent as MinusIcon} from "../icons/minus.svg";
+import {ReactComponent as PlusIcon} from "../icons/plus.svg";
+import {ReactComponent as RemoveIcon} from "../icons/cross.svg";
+
 import { SERVER_HOST } from "../config/global-constants";
+
+import "../css/ShoppingBag.css";
 
 export default class ShoppingBag extends Component{
     constructor(props){
@@ -102,8 +108,8 @@ export default class ShoppingBag extends Component{
             <div className="shoppingBag">
                 <Header/>
                 <main>
-                    <span>Shopping Bag</span>
-                    <span>Items currently in your bag:</span>
+                    <span className="heading">Shopping Bag</span>
+                    <span className="subHeading">Items currently in your bag:</span>
                     <table>
                         <thead>
                             <tr>
@@ -124,31 +130,30 @@ export default class ShoppingBag extends Component{
                                         :
                                             <td>null</td>
                                         }
-                                        <td>
-                                            <button type="button" 
-                                                onClick={() => this.decreaseQuantity(product.id)}>
-
-                                            </button>
-                                            {product.quantity}
-                                            <button type="button" 
-                                                onClick={() => this.increaseQuantity(product.id)}>
-
-                                            </button>
+                                        <td className="quantity">
+                                            <MinusIcon onClick={() => this.decreaseQuantity(product.id)}/>
+                                            <span>{product.quantity}</span>
+                                            <PlusIcon  onClick={() => this.increaseQuantity(product.id)}/>  
                                         </td>
                                         <td>
                                             {(Math.round(product.price * product.quantity * 100) / 100).toFixed(2)}
                                         </td>
-                                        <td>
-                                            <button type="button" onClick={() => this.remove(product.id)}>
-                                                
-                                            </button>
+                                        <td className="removeItem">
+                                            <RemoveIcon onClick={() => this.remove(product.id)}/>
                                         </td>
                                     </tr>
                                 );
                             })}
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>Total:</td>
+                                <td>{(Math.round(this.state.totalPrice * 100) / 100).toFixed(2)}</td>
+                            </tr>
+                        </tfoot>
                     </table>
-                    <span>{(Math.round(this.state.totalPrice * 100) / 100).toFixed(2)}</span>
                 </main>
                 <Footer/>
             </div>
