@@ -22,7 +22,8 @@ export default class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            logout:false
+            logout:false,
+            searchBarInput:""
         }
     }
 
@@ -56,6 +57,10 @@ export default class Header extends Component{
                         <Link to={"/"} id="headerLink">
                             <h1>Heading</h1>
                         </Link>
+                    </div>
+                    <div id="search">
+                    <input placeholder="Type to search..." type="search"onChange={this.props.searchProduct}></input>
+
                     </div>
                     <div id="buttons">
                         

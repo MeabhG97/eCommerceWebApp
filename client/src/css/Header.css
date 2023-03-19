@@ -6,9 +6,9 @@ header {
   border-width: 0.25em;
   border-color: #A4036F;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "title  buttons";
+  grid-template-areas: "title search  buttons";
 }
 header #title {
   grid-area: title;
