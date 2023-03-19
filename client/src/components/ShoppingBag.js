@@ -17,6 +17,11 @@ export default class ShoppingBag extends Component{
     }
 
     componentDidMount(){
+        this.getAllItemsFromBag();
+    }
+
+    getAllItemsFromBag(){
+        this.setState({products: []});
         if(typeof localStorage.shoppingBag !== "undefined"){
             let items = JSON.parse(localStorage.getItem("shoppingBag"));
             items.map(item => {
@@ -83,6 +88,14 @@ export default class ShoppingBag extends Component{
         }
     }
 
+    remove = (id) => {
+        let localItems = JSON.parse(localStorage.getItem("shoppingBag"));
+        let remainingItems = localItems.filter(item => {
+            return item !== id;
+        });
+        localStorage.setItem("shoppingBag", JSON.stringify(remainingItems));
+        this.getAllItemsFromBag();
+    } 
 
     render(){
         return(
@@ -98,6 +111,7 @@ export default class ShoppingBag extends Component{
                                 <th></th>
                                 <th>Quantity</th>
                                 <th>Price</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -123,6 +137,11 @@ export default class ShoppingBag extends Component{
                                         </td>
                                         <td>
                                             {(Math.round(product.price * product.quantity * 100) / 100).toFixed(2)}
+                                        </td>
+                                        <td>
+                                            <button type="button" onClick={() => this.remove(product.id)}>
+                                                
+                                            </button>
                                         </td>
                                     </tr>
                                 );
