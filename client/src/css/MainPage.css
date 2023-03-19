@@ -2,6 +2,8 @@
   font-family: "Roboto Mono", monospace;
   display: flex;
   flex-flow: column;
+  min-height: 100vh;
+  height: auto;
 }
 #MainPage .mainAndMenu {
   display: flex;

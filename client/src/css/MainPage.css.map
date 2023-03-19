@@ -1,1 +1,1 @@
-{"version":3,"sources":["../scss/MainPage.scss","../scss/Mixins.scss","../scss/Constants.scss","MainPage.css"],"names":[],"mappings":"AAGA;ECAI,qCCaG;EFXH,aAAA;EACA,iBAAA;AGFJ;AHII;EACI,aAAA;AGFR;AHGQ;EACI,yBELJ;EFMI,YAAA;AGDZ","file":"MainPage.css"}
+{"version":3,"sources":["../scss/MainPage.scss","../scss/Mixins.scss","../scss/Constants.scss","MainPage.css"],"names":[],"mappings":"AAGA;ECAI,qCCaG;EFXH,aAAA;EACA,iBAAA;EACA,iBAAA;EACA,YAAA;AGFJ;AHII;EACI,aAAA;AGFR;AHGQ;EACI,yBEPJ;EFQI,YAAA;AGDZ","file":"MainPage.css"}

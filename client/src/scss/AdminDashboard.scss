@@ -4,6 +4,8 @@
 #admin-dashboard{
     background-color: Constants.$white;
     @include fonts;
+    min-height: 100vh;
+    height: auto;
     main{
         display: flex;
         flex-flow: column;

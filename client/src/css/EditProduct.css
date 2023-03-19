@@ -1,7 +1,8 @@
 main {
   font-family: "Roboto Mono", monospace;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 main div#productImagesDisplay {
   width: 60%;

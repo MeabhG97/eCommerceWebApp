@@ -4,7 +4,8 @@
 main{
     @include fonts;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     div#productImagesDisplay{
         width: 60%;
         display: flex;
