@@ -119,7 +119,8 @@ export default class Header extends Component{
                             : null
                         }
 
-                        {//Show shopping bag
+                        {//Show shopping bag to Users and Guests
+                            localStorage.userAccessLevel < ACCESS_LEVEL_ADMIN &&
                             this.props.showShoppingBag ?
                                 <Link to={"/ShoppingBag"} className="shoppingBag">
                                     <ShoppingBagIcon/>
