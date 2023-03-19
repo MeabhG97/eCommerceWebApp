@@ -1,0 +1,57 @@
+.shoppingBag main {
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  min-height: 100vh;
+  padding: 2em;
+  background-color: #FBF9FF;
+}
+.shoppingBag main .heading {
+  font-size: xx-large;
+  color: #02111B;
+}
+.shoppingBag main .subHeading {
+  font-size: larger;
+  color: #02111B;
+}
+.shoppingBag main table tbody tr .image img {
+  height: auto;
+  width: 100%;
+  max-width: 3em;
+}
+.shoppingBag main table tbody tr .noImage svg {
+  height: auto;
+  width: 100%;
+  max-width: 3em;
+}
+.shoppingBag main table tbody tr .noImage svg path {
+  fill: #A599B5;
+}
+.shoppingBag main table tbody tr .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shoppingBag main table tbody tr .quantity svg {
+  height: auto;
+  width: 100%;
+  max-width: 1.5em;
+}
+.shoppingBag main table tbody tr .quantity svg path {
+  fill: #A4036F;
+}
+.shoppingBag main table tbody tr .quantity span {
+  margin: 0.25em;
+}
+.shoppingBag main table tbody tr .removeItem svg {
+  height: auto;
+  width: 100%;
+  max-width: 1em;
+}
+.shoppingBag main table tbody tr .removeItem svg path {
+  fill: #A4036F;
+}
+.shoppingBag main table tfoot tr td {
+  color: #02111B;
+  font-size: 1.2em;
+}/*# sourceMappingURL=ShoppingBag.css.map */
