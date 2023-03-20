@@ -45,6 +45,14 @@ router.get("/user/get/image/:filename", (req, res) => {
     });
 });
 
+router.get("/user/purchases/:id", (req, res) => {
+    userModel.findById(req.params.id, (error, data) => {
+        if(data){
+            res.json({purchases: data.purchases});
+        }
+    })
+});
+
 //Change user image
 router.put("/user/image/:id", upload.single("image"), (req, res) => {
     if(!req.file){
@@ -66,6 +74,20 @@ router.put("/user/image/:id", upload.single("image"), (req, res) => {
             }
         });
     }
+});
+
+//New Purchase
+router.put("/user/purchase/:id/:paypalId/:products", (req, res) => {
+    userModel.findByIdAndUpdate(req.params.id,
+        {$push: {purchases: {paypalID: req.params.paypalId, products: [JSON.parse(req.params.products)]}}}, 
+        {returnDocument:'after'}, (error, data) => {
+            if(data){
+                res.json(data);
+            }
+            else{
+                res.json({errorMessage: "Purchase not added"});
+            }
+        });
 });
 
 //Register new user

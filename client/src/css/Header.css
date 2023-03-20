@@ -133,4 +133,26 @@ header #buttons #logout svg {
   height: auto;
   width: 100%;
   max-width: 1.2em;
+}
+header #buttons .shoppingBag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header #buttons .shoppingBag svg {
+  padding: 0.2em;
+  height: auto;
+  width: 100%;
+  max-width: 3em;
+}
+header #buttons .shoppingBag svg path {
+  fill: #A4036F;
+}
+header #buttons .shoppingBag span {
+  padding-top: 0.5em;
+  padding-left: 0.1em;
+  position: absolute;
+  text-decoration: none;
+  font-size: 1.3em;
+  color: #A4036F;
 }/*# sourceMappingURL=Header.css.map */

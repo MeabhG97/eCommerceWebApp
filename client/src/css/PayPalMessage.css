@@ -1,0 +1,30 @@
+.paypal main {
+  display: flex;
+  flex-flow: column;
+  background-color: #FBF9FF;
+  padding: 2em;
+  align-items: center;
+}
+.paypal main span {
+  margin: 1em;
+}
+.paypal main .heading {
+  font-size: x-large;
+  font-weight: 600;
+}
+.paypal main div {
+  margin: 1em;
+}
+.paypal main button {
+  color: #FBF9FF;
+  background-color: #A4036F;
+  border: solid;
+  border-width: 0.1em;
+  border-radius: 1em;
+  border-color: #A4036F;
+  width: 10em;
+  height: 3em;
+}
+.paypal main button svg path {
+  fill: #FBF9FF;
+}/*# sourceMappingURL=PayPalMessage.css.map */

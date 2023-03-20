@@ -124,7 +124,8 @@ export default class MainPage extends Component {
         return (
             <div id="MainPage" className={this.state.menuOpen ? "opened" : "closed"}>
                 <Header menuOpen={this.state.menuOpen} handleMenuOpen={this.handleMenuOpen}
-                  showLogin={true} showMenuButton={true} showDashboard={true} searchProduct={this.searchProduct.bind(this)}/>
+                  showLogin={true} showMenuButton={true} showDashboard={true} searchProduct={this.searchProduct.bind(this)} showShoppingBag={true}/>
+
 
                 <div className="mainAndMenu">
                     <main className={this.state.menuOpen ? "opened" : "closed"}>

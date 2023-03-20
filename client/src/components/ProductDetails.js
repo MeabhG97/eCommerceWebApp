@@ -83,6 +83,22 @@ export default class ProductDetails extends Component{
         }
     }
 
+    addToBag = () => {
+        if(typeof localStorage.shoppingBag === "undefined"){
+            let item = [];
+            item.push(this.props.match.params.id);
+            localStorage.setItem("shoppingBag", JSON.stringify(item));
+        }
+        else{
+            let currentBag = [];
+            currentBag = JSON.parse(localStorage.getItem("shoppingBag"));
+            if(!currentBag.includes(this.props.match.params.id)){
+                currentBag.push(this.props.match.params.id);
+            }
+            localStorage.setItem("shoppingBag", JSON.stringify(currentBag));
+        }
+    }
+
     render(){
         return(
             <>
@@ -112,7 +128,12 @@ export default class ProductDetails extends Component{
                         <span className="info" id="category">{this.state.category}</span>
                         <span className="info" id="price">€{this.state.productPrice}</span>
                         {this.state.stock > 0 ?
-                            <span className="info" id="inStock">In Stock</span>
+                            <>
+                                <span className="info" id="inStock">In Stock</span>
+                                <button type="button" id="addToBag" onClick={this.addToBag}>
+                                    Add To Bag
+                                </button>
+                            </>
                         :
                             <span className="info" id="outStock">Out Of Stock</span>
                         }
