@@ -45,6 +45,14 @@ router.get("/user/get/image/:filename", (req, res) => {
     });
 });
 
+router.get("/user/purchases/:id", (req, res) => {
+    userModel.findById(req.params.id, (error, data) => {
+        if(data){
+            res.json({purchases: data.purchases});
+        }
+    })
+});
+
 //Change user image
 router.put("/user/image/:id", upload.single("image"), (req, res) => {
     if(!req.file){

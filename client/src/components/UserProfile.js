@@ -100,7 +100,7 @@ export default class UserProfile extends Component{
                         <span className="heading">Email</span>
                         <span className="info">{this.state.email}</span>
                     </div>
-                    <Link to={"/PurchaseHistory"} className="button" id="PurchaseHistory">
+                    <Link to={`/PurchaseHistory/${localStorage.getItem("userID")}`} className="button" id="PurchaseHistory">
                         <span>Purchase History</span>
                     </Link>
                     <Link to={"/"} className="button" id="back">

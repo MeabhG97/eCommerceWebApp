@@ -37,7 +37,7 @@ export default class App extends Component {
                     <Route exact path="/ShoppingBag" component={ShoppingBag}/>
                     <Route exact path="/PayPalMessage/:type/:orderID" component={PayPalMessage}/>
                     <LoggedInRoute exact path="/UserProfile" component={UserProfile}/>
-                    <LoggedInRoute exact path="/PurchaseHistory" component={PurchaseHistory}/>
+                    <LoggedInRoute exact path="/PurchaseHistory/:id" component={PurchaseHistory}/>
                     <AdminRoute exact path="/AdminDashboard" component={AdminDashboard}/>
                     <AdminRoute exact path="/AddNewProduct" component={AddNewProduct}/>
                     <AdminRoute exact path="/EditProduct/:id" component={EditProduct}/>
